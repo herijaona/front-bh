@@ -1,0 +1,46 @@
+<!-- <div *ngIf="editPAGEstatus" class="edit_ container-fluid grid grid-top">
+  &nbsp;
+  <a class="waves-light p-2 mb-2 addBut" mdbWavesEffect (click)="AddNew()"><i class="fa fa-plus mr-2 "></i> ADD NEW</a>
+</div> -->
+
+<front-vteam *ngFor="let item of dataTeamFront" [vteamDATA]="item"></front-vteam>
+<!-- Modal add-->
+<div (onHide)="hiddedModalAddEdit()" *ngIf="addNewState" style="overflow: auto;" mdbModal #form="mdb-modal" class="modal fade" id="modalZoneForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+  <div *ngIf="addNewState" class="cascading-modal" role="document">
+    <!--Content-->
+    <div class="modal-content success-content">
+      <!--Header-->
+      <div class="modal-header">
+        <h4 class="title"><i class="fa fa-pencil"></i> Add New Zone </h4>
+        <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="closeModalAddNEw()">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body mb-0">
+        <team-front-new [tmv_data]='tmVideoData' [do_action]='tmVideoAction'></team-front-new>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- Modal video play-->
+<div (onHide)="hiddedModal()" *ngIf="showDataState" style="overflow: auto;" mdbModal #showVideo="mdb-modal" class="modal fade" id="modalZoneForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+  <div *ngIf="showDataState" class="modal-dialog cascading-modal modal-lg" role="document">
+    <!--Content-->
+    <div class="modal-content md-content">
+      <!--Header-->
+      <div class="modal-header md-header">
+        <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="showVideoCLose()">
+          <span aria-hidden="true"><i class="fa fa-window-close"></i>fermer</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body mb-0">
+        <div [innerHtml]="videoTeam|bhSafeHtml" class="md-video text-center">
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+</div>

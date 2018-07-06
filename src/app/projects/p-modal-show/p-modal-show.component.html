@@ -1,0 +1,20 @@
+<div *ngIf="activeShow"  style="overflow: auto;" (onHidden)="hiddedModal()"  mdbModal #p_mdl="mdb-modal" class="modal fade" id="modalZoneForm2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true"  [config]="{backdrop: true, ignoreBackdropClick: true}">
+  <div    class="modal-dialog {{modal_size}}" role="document">
+    <div class="modal-content">
+      <button type="button" class="close close-md" data-dismiss="modal" aria-label="Close" (click)="p_mdl.hide()">
+        <span aria-hidden="true">×</span>
+      </button>
+      <div class="modal-body">
+        <div *ngIf="lgin_mdl" class="lgm">
+          <login-modal (endMessage)="endMesssage($event)" [data_]="dataModal"></login-modal>
+        </div>
+        <div *ngIf="askquest_mdl" class="askm">
+          <ask-questions (endMessage)="endMesssage($event)" [data_]="dataModal"></ask-questions>
+        </div>
+        <div *ngIf="applyModal" class="appl">
+          <project-apply (endMessage)="endMesssage($event)" [data_]="dataModal"></project-apply>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

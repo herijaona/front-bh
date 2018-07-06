@@ -1,0 +1,32 @@
+.appli-table {
+  .text-bl {
+    th{
+      width: 20%;
+    }
+    .col-name{
+      width: 35%;
+    }
+    .author{
+      width: 12%;
+    }
+    .type{
+      width: 8%;
+      max-width: 58px;
+      word-wrap: break-word;
+    }
+    .number{
+      width: 1%;
+    }
+  }
+  .bn {
+    padding-left: 7px;
+  }
+}
+.type{
+  width: 8%;
+  max-width: 58px;
+  word-wrap: break-word;
+}
+.mt-custom {
+  margin-top: 4rem
+}

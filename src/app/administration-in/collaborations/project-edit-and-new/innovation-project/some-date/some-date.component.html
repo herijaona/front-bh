@@ -1,0 +1,21 @@
+<h5>Project Type</h5>
+<div class="row mt-3 rec">
+  <div class="col-6 pl-0">
+    <span>Deadline for receipt of applications</span>
+    <my-date-picker placeholder="Deadline for receipt of applications" (dateChanged)="onDateChanged($event,'limitdate')" name="mydate"
+      [options]="myDatePickerOptionsDeadLine" [(ngModel)]="modelDate.limitdate" required></my-date-picker>
+  </div>
+  <div class="col-6 pl-0"></div>
+  <div class="col-6 pl-0">
+    <span>date of the selected appications</span>
+    <my-date-picker placeholder="date of the selected appications" (dateChanged)="onDateChanged($event,'applicationselecteddate')"
+      name="mydate" [options]="myDatePickerOptionsSelectApplication" [(ngModel)]="modelDate.applicationselecteddate" required></my-date-picker>
+
+  </div>
+  <div class="col-6 pl-0">
+    <span>planned date of discussion</span>
+    <my-date-picker placeholder="planned date of discussion" (dateChanged)="onDateChanged($event,'discussdate')" name="mydate"
+      [options]="myDatePickerOptionsDiscussionDate" [(ngModel)]="modelDate.discussdate" required></my-date-picker>
+
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.presentation {
+    text-align: justify;
+}
+.cl-h2{
+        display: inline-flex;
+        margin: 0;
+        font-weight: 400;
+        font-size: 20px;
+        color: #4B4D55;
+        margin-bottom: 12px;
+        font-family: SourceSansPro-Regular;
+        .pst{
+            margin-right: 20px;
+            border-bottom: 1px solid #b9b7b7;
+            padding: 0 0 10px;
+        }
+    }
+.presentation>div>p>span{
+    // color: red !important;
+    // font-size: 15px !important;
+    // font-family: "SourceSansPro-Lighter";
+}
+.present{
+        padding-top: 15px;
+        p{
+            color: #4B4D55;
+            font-family: SourceSansPro-Regular;
+            font-size: 15px;
+        }
+}

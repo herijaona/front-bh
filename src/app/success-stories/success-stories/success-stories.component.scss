@@ -1,0 +1,194 @@
+.bg-mind{
+    background-image:url(/assets/img/london.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 355px;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 0px;
+}
+.nr-brand{
+    visibility: hidden;
+}
+.nav-two{
+    background-color: transparent !important;
+    height: 75px;
+    top: 261px;
+    h1{
+        color: white;
+        font-family: "SourceSansPro-bold";
+    }
+    ul li ul li a{
+        color: white;
+        font-family: "SourceSansPro-Lighter";
+        font-style: italic;
+    }
+}
+.list-nav{
+    list-style: none;
+    padding: 0;
+}
+.grid{
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: none;
+}
+.nav-col{
+    margin-top: -37px;
+}
+.nav-one{
+    margin-bottom: 45px;
+    max-height: 51px;
+    box-shadow: 0px 1px 2px 0px grey;
+    padding-bottom: 0;
+    .nav-link{
+        background: transparent !important;
+        color: rgba(0, 0, 0, 0.5) !important;
+    }
+    ul li a{
+        font-family: "SourceSansPro-bold";
+    }
+    .active .nav-link{
+        border-bottom: 3px solid #e84d3f;
+        color: rgba(0, 0, 0, 0.9) !important;
+    }
+}
+.img-logo{
+    margin-top: -45px;
+}
+.grid-top{
+    padding: 0;
+    margin-bottom: 20px;        
+        h2{
+            font-size: 20px;
+            margin-top: 15px;
+            color: black;
+            font-family: SourceSansPro-bold;
+            text-transform: capitalize;
+            line-height: 12px;
+        } 
+}
+.edit-delete{
+    position: absolute;
+    right: 21px;
+    display: flex;
+    margin: 8px;
+    z-index:1000;
+    margin-right: 4px;
+    .itw{
+        margin:4px
+    }
+    .fa-pen{
+        color: #0077B5;
+        font-size: 20px;
+        background: #ffffff9e;
+        border-radius: 45px;
+        padding: 5px 6px 5px 6px;
+    }
+    .fa-del{
+        color: #d61200;
+        font-size: 20px;
+        background: #ffffff9e;
+        border-radius: 45px;
+        padding: 5px 6px 5px 6px;
+    }
+}
+.view-video{
+        color: #7f7f7f;
+        font-size: 15px;
+        font-family: SourceSansPro-Regular;
+}
+.posters{
+    overflow:hidden;
+    position: relative;
+    @media(min-width:992px){
+    img{
+        
+    }
+  }
+}
+.posters:hover img{
+    transform:scale(1.03);
+    transition: transform 0.5s cubic-bezier(0.9, 0.26, 0.58, 1);
+}
+.btn-floating{
+    position: relative;
+    left: 29px;
+    top: -14px;
+    z-index: 1;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    width: 47px;
+    height: 47px;
+    padding: 10px 0px 5px 15px;
+    border-radius: 50%;
+    margin: 0px;
+    background-color: #d6970b;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+    width: 54.1px;
+    height: 52.1px;
+    width: 47px;
+    height: 47px;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    i{
+        font-size: 21px;
+        color: white;
+    }
+}
+.overlay_{
+    position: absolute;
+    top: 0;
+    background: black;
+    background: rgba(0, 0, 0, 0.6);
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 20px;
+    text-align: center;
+    height: 100%;
+    z-index: 1;
+    i{
+        color:#cacaca;
+        margin-top: 25%;
+        font-size: 25px;
+    }
+}
+.overlay_:hover{
+        opacity:1
+}
+#modalVideoPLay {
+    background-color: #000000eb; 
+}
+// .md-header{
+//     background: transparent !important;
+//     border: none;
+//     .close{
+//         color: white;
+//         opacity: 5;
+//     }
+// }
+// .md-header{
+//     .close{
+//             text-shadow:none;
+//         span{
+//             font-size: 16px;
+//             text-transform: uppercase;
+//             font-family: SourceSansPro-Semibold;
+//         }
+//         i{
+//             color: #e83936;
+//             padding-right: 5px;
+//         }
+//     }
+// }
+// .md-content{
+//     background: transparent;
+// }
+

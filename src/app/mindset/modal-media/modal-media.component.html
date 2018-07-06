@@ -1,0 +1,25 @@
+  <!-- Modal video play-->
+    <div style="overflow: auto;"  (onHidden)="hiddedModal()"   mdbModal #mdModal="mdb-modal" class="modal fade" id="modalZoneForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: true, ignoreBackdropClick: true}">
+      <div *ngIf="showDataState"  class="modal-dialog cascading-modal modal-lg" role="document">
+        <!--Content-->
+        <div class="modal-content md-content">
+          <!--Header-->
+          <div class="modal-header md-header light-blue darken-3 white-text">
+            <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="mdModal.hide()">
+              <span aria-hidden="true"><i class="fa fa-window-close"></i>fermer</span>
+            </button>
+          </div>
+          <!--Body-->
+          <div class="modal-body mb-0">
+            <ng-template [ngIf]="c_dtype == 2">
+              <div [innerHtml]="videoZoneMindset|bhSafeHtml" class="md-video text-center"></div>
+            </ng-template>
+
+            <ng-template [ngIf]="c_dtype == 1">
+              <img class="imf" [src]="imUrl" alt="">
+            </ng-template>
+          </div>
+          <!--/.Content-->
+        </div>
+      </div>
+    </div>

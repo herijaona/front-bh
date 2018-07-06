@@ -1,0 +1,35 @@
+<div class="col-container">
+  <div class="table-respo">
+    <!--Table-->
+    <table class="table appli-table">
+      <!--Table head-->
+      <thead class="head-color">
+        <tr class="text-bl">
+          <th class="date">&nbsp; Date &nbsp;</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Organisation</th>
+          <th>Invited By</th>
+        </tr>
+      </thead>
+      <!--Table head-->
+      <!--Table body-->
+      <tbody>
+        <tr *ngFor="let item of allInv, let indx = index ">
+          <td class="no-wrp">{{getDAteString(item.sendDate)}}</td>
+          <!-- <td class="no-wrp">--</td> -->
+          <td>{{item.dataDetails.firstname}}</td>
+          <td>{{item.dataDetails.lastname}}</td>
+          <td>
+            {{item.dataDetails.organisationName}}
+          </td>
+          <td>
+            {{item.byUser.firstname+' '+item.byUser.lastname}}
+          </td>
+        </tr>
+      </tbody>
+      <!--Table body-->
+    </table>
+    <!--Table-->
+  </div>
+</div>

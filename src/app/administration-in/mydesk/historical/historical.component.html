@@ -1,0 +1,115 @@
+<div class="col-container">
+  <div class="table-respo">
+    <h3 class="m-yq">Questions :</h3>
+    <!--Table-->
+    <table class="table appli-table mt-3">
+      <!--Table head-->
+      <thead class="head-color">
+        <tr class="text-bl">
+          <th class="date">&nbsp; Date &nbsp;</th>
+          <th class="date">hour</th>
+          <th class="last-name">Last name</th>
+          <th class="last-name">First name</th>
+          <th class="about">About</th>
+        </tr>
+      </thead>
+      <!--Table head-->
+      <!--Table body-->
+      <tbody *ngFor="let item of allQuestions, let indx = index ">
+        <tr>
+          <!-- class="htl" -->
+          <td class="no-wrp">{{item.date}}</td>
+          <td>{{item.hour}}</td>
+          <td>{{item.userAsk.lastname}}</td>
+          <td>{{item.userAsk.firstname}}</td>
+          <td>
+            <span *ngIf="item.abType === 'prt'">{{g.getCollabtypetext(item.about)}} </span>
+            <span *ngIf="item.abType !== 'prt'">{{item.about}} </span>
+          </td>
+          <!-- <td>
+                          <a target="_blank" [routerLink]="['/administration-in','desk','questions','details' , item._id ]">
+                              <i class="fa fa-eye"></i>
+                          </a>
+                      </td> -->
+
+        </tr>
+        <tr class="text-tr">
+          <td colspan="5" class="reply-b">
+            <span>
+              <span [innerHtml]="item.quest_part|bhSafeHtml"></span>
+              <a *ngIf="item.abType !== 'prt'" class="ml-2 text-blue more" target="_blank" [routerLink]="['/administration-in','desk','questions','details' , item._id ]">
+                More
+              </a>
+              <a *ngIf="item.abType === 'prt'" class="ml-2 text-blue more" target="_blank" [routerLink]="['/administration-in','collaborations','questions','details' , item._id ]">
+                More
+              </a>
+            </span>
+          </td>
+        </tr>
+        <div class="mb-3"></div>
+      </tbody>
+      <!--Table body-->
+    </table>
+    <!--Table-->
+  </div>
+  <!-- <div class="text-right mb-4">
+    <a class="btn-tab1">1</a>
+    <a class="btn-tab2">2</a>
+    <a class="btn-tab2">2</a>
+    <a class="btn-tab3">Suivant</a>
+  </div> -->
+
+  <div class="table-respo">
+      <h3 class="m-yq">Applications :</h3>
+      <!--Table-->
+      <table class="table appli-table mt-3">
+        <!--Table head-->
+        <thead class="head-color">
+          <tr class="text-bl">
+            <th class="date">&nbsp; Date &nbsp;</th>
+            <th class="date">hour</th>
+            <th class="last-name">Last name</th>
+            <th class="last-name">First name</th>
+            <th class="about">About</th>
+          </tr>
+        </thead>
+        <!--Table head-->
+        <!--Table body-->
+        <tbody *ngFor="let item of allQuestions, let indx = index ">
+          <tr>
+            <!-- class="htl" -->
+            <td class="no-wrp">{{item.date}}</td>
+            <td>{{item.hour}}</td>
+            <td>{{item.userAsk.lastname}}</td>
+            <td>{{item.userAsk.firstname}}</td>
+            <td>
+              <span *ngIf="item.abType === 'prt'">{{g.getCollabtypetext(item.about)}} </span>
+              <span *ngIf="item.abType !== 'prt'">{{item.about}} </span>
+            </td>
+            <!-- <td>
+                            <a target="_blank" [routerLink]="['/administration-in','desk','questions','details' , item._id ]">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                        </td> -->
+  
+          </tr>
+          <tr class="text-tr">
+            <td colspan="5" class="reply-b">
+              <span>
+                <span [innerHtml]="item.quest_part|bhSafeHtml"></span>
+                <a *ngIf="item.abType !== 'prt'" class="ml-2 text-blue more" target="_blank" [routerLink]="['/administration-in','desk','questions','details' , item._id ]">
+                  More
+                </a>
+                <a *ngIf="item.abType === 'prt'" class="ml-2 text-blue more" target="_blank" [routerLink]="['/administration-in','collaborations','questions','details' , item._id ]">
+                  More
+                </a>
+              </span>
+            </td>
+          </tr>
+          <div class="mb-3"></div>
+        </tbody>
+        <!--Table body-->
+      </table>
+      <!--Table-->
+    </div>
+</div>

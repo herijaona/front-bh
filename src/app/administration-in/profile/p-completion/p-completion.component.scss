@@ -1,0 +1,44 @@
+.profile-text {
+    color: #808080;
+    background: #f9f9f9;
+    padding: 12px 14px 12px 25px;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: SourceSansPro-Semibold;
+    display: flex;
+    display: -webkit-flex;
+    margin-top: 44px;
+    div:first-child {
+        margin-right: 10px;
+        font-family: SourceSansPro-Regular;
+        color: #524a4a;
+        font-size: 15px;
+    }
+}
+
+h3 {
+    font-size: 19px;
+    margin-top: 40px;
+}
+
+.progress-in {
+    background: linear-gradient(-90deg, #e83936, #f94d37);
+    height: 14px;
+    // width: 85%;
+}
+
+.progress-out {
+    background: rgba(232, 57, 54, 0.2);
+    width: 205px;
+    height: 14px;
+    top: 3px;
+    position: relative;
+}
+
+.enter-text {
+    font-size: 15px;
+    line-height: 9px;
+    color: #c7c7c7;
+    font-family: SourceSansPro-Regular;
+    margin-top: 16px;
+}

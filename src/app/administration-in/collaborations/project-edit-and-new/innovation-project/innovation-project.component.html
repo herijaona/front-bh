@@ -1,0 +1,183 @@
+<div class="innovate">
+  <h5>project description</h5>
+  <div class="mb-20 p-re">
+    <label class="grey-text-form">project name </label>
+    <input placeholder="Insert the name of the innovation project on which you wish to receive applications" (change)="onChange($event)"
+      type="text" [(ngModel)]="prModel.pr_name" name="pName" class="form-control-project prN">
+    <i class="fa fa-check fc"></i>
+  </div>
+  <div class="mb-20 p-re">
+    <label class="grey-text-form"> Project Context</label>
+    <ckeditor height="100px" rows="40" cols="40" placeholder="Project context" #ckeditor1 [(ngModel)]="prModel.pr_contexte_ProjectEditor"
+      [config]="g.getConfig('conf0_editor')" [readonly]="false" (change)="onChange($event)" (editorChange)="onEditorChange($event)"
+      (ready)="onReady($event)" (focus)="onChange($event)" (blur)="onChange($event)" debounce="500">
+    </ckeditor>
+  </div>
+  <div class="mb-20 p-re">
+    <label class="grey-text-form">Proposal Requirements</label>
+    <ckeditor #ckeditor3 [(ngModel)]="prModel.pr_elementProposition_ProjectEditor" [config]="g.getConfig('conf0_editor')" [readonly]="false"
+      (change)="onChange($event)" (editorChange)="onEditorChange($event)" (ready)="onReady($event)" (focus)="onChange($event)"
+      (blur)="onChange($event)" debounce="500">
+    </ckeditor>
+  </div>
+  <div class="mb-20 p-re">
+    <label class="grey-text-form"> Project Objectives</label>
+    <ckeditor #ckeditor2 [(ngModel)]="prModel.pr_objectif_ProjectEditor" [config]="g.getConfig('conf0_editor')" [readonly]="false"
+      (change)="onChange($event)" (editorChange)="onEditorChange($event)" (ready)="onReady($event)" (focus)="onChange($event)"
+      (blur)="onChange($event)" debounce="500">
+    </ckeditor>
+  </div>
+  <div class="mb-20 p-re">
+    <label class="grey-text-form"> Decision process</label>
+    <ckeditor #ckeditor2 [(ngModel)]="prModel.pr_processDecision" [config]="g.getConfig('conf0_editor')" [readonly]="false" (change)="onChange($event)"
+      (editorChange)="onEditorChange($event)" (ready)="onReady($event)" (focus)="onChange($event)" (blur)="onChange($event)"
+      debounce="500">
+    </ckeditor>
+  </div>
+
+  <div class="">
+    <h5>organisation</h5>
+    <div class="radiotop mb-3">
+      <div class="row">
+        <div class="col-6 pl-0">
+          <div class="element">
+            <input (change)="durationTypeCollaborationChange()" class="form-check-input" mdbInputDirective name="group1" value="programmed"
+              [(ngModel)]="cPrModel.pr_collabDurationType" type="radio" id="bouton_1">
+            <label for="bouton_1" class="form-check-label">Programmed project : with a start date and en end date</label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="element cl">
+            <input (change)="durationTypeCollaborationChange()" class="form-check-input" mdbInputDirective value="continue" [(ngModel)]="cPrModel.pr_collabDurationType"
+              type="radio" id="bouton_2" name="group1">
+            <label for="bouton_2" class="form-check-label">Permanent project : to continually access innovations</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template [ngIf]="shDate">
+      <div class="">
+        <some-date (valueDate)='saveDate($event)'></some-date>
+      </div>
+    </ng-template>
+  </div>
+  <div class="">
+    <h5 class="mb-2">Confidentiality</h5>
+    <div class="radiotop mb-3">
+      <div class="row">
+        <div class="col-6 pl-0">
+          <div class="element">
+            <input value="no" (change)="onConfidentialChange($event)" type="radio" name="confidential_" id="confide-no" class="form-check-input">
+            <label for="confide-no" class="form-check-label">No confidential information</label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="element cl">
+            <input value="yes" (change)="onConfidentialChange($event)" type="radio" name="confidential_" id="confide-yes" class="form-check-input">
+            <label for="confide-yes" class="form-check-label">There is some confidential information</label>
+          </div>
+        </div>
+        <div class="col-6 pl-0">
+          <ng-template [ngIf]="shConfidential">
+            <label class="grey-text-form mb-3 pl-0">Confidential information</label>
+            <ckeditor #ckeditor2 [(ngModel)]="cPrModel.pr_dataConfidential" [config]="g.conf0_editor" [readonly]="false" (change)="onChange($event)"
+              (editorChange)="onEditorChange($event)" (ready)="onReady($event)" (focus)="onChange($event)" (blur)="onChange($event)"
+              debounce="500">
+            </ckeditor>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div class="mb-20  mt-4">
+      <h5 class="mb-2">Country broadcast &nbsp; ({{getCountryNumber()}})</h5>
+      <label class="grey-text-form">continent</label>
+      <div class="row">
+
+        <div class="col-12 p-0">
+          <div class="mt-2 flex continent-f">
+            <label [ngClass]="{ccur: c_part == 'asia'}" (click)="changeContinent('asia')" class="custon-ch col-2">
+              <span class="agree ml-2 form-check-labe">Asia</span>
+              <span [ngClass]="{'cc cselct': hasCountryIN('asia'), 'no-cselct': !hasCountryIN('asia')}" class="checkmark_cc"></span>
+            </label>
+            <label [ngClass]="{ccur: c_part == 'africa'}" (click)="changeContinent('africa')" class="custon-ch col-2">
+              <span class="agree ml-2 form-check-labe">Africa</span>
+              <span [ngClass]="{'cc cselct': hasCountryIN('africa'), 'no-cselct': !hasCountryIN('africa')}" class="checkmark_cc"></span>
+            </label>
+            <label [ngClass]="{ccur: c_part == 'europa'}" (click)="changeContinent('europa')" class="custon-ch col2">
+              <span class="agree ml-2 form-check-labe">Europa</span>
+              <span [ngClass]="{'cc cselct': hasCountryIN('europa'), 'no-cselct': !hasCountryIN('europa')}" class="checkmark_cc"></span>
+            </label>
+            <label [ngClass]="{ccur: c_part == 'america'}" (click)="changeContinent('america')" class="custon-ch col2">
+              <span class="agree ml-2 form-check-labe">America</span>
+              <span [ngClass]="{'cc cselct': hasCountryIN('america'), 'no-cselct': !hasCountryIN('america')}" class="checkmark_cc"></span>
+            </label>
+            <label [ngClass]="{ccur: c_part == 'oceania'}" (click)="changeContinent('oceania')" class="custon-ch col2">
+              <span class="agree ml-2 form-check-labe">Oceania</span>
+              <span [ngClass]="{'cc cselct': hasCountryIN('oceania'), 'no-cselct': !hasCountryIN('oceania')}" class="checkmark_cc"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-12 p-0 mt-4 continent-table">
+          <table class="table table-striped table-bordered table-responsive-md">
+            <thead>
+              <tr>
+                <td class="tc">
+                  <select (change)='changeCountryPart()' [(ngModel)]='c_part' id="">
+                    <option value="europa">Europa</option>
+                    <option value="america">America</option>
+                    <option value="africa">Africa</option>
+                    <option value="asia">Asia</option>
+                    <option value="oceania">Oceania</option>
+                  </select>
+                </td>
+                <td class="st">
+                  <span>STARTUPS</span>
+                </td>
+                <td class="st">
+                  <span>INCUBATORS</span>
+                </td>
+                <td class="st">
+                  <span>RESEARCH</span>
+                </td>
+                <td class="st">
+                  <span>CORPORATE</span>
+                </td>
+                <td class="st">
+                  <span>VENTURE CAPITAL</span>
+                </td>
+              </tr>
+            </thead>
+            <tbody *ngIf="dataReadyIn">
+              <tr *ngFor="let item of selContinent" class="radiotop">
+                <td>{{item.country}}</td>
+                <td (click)="selectPartC($event , item, 'startUps')" [ngClass]="{diffSelect: checkItems(item, 'startUps') }" class="text-center curs_pointer custon-ch">
+                  <input [checked]="checkItems(item, 'startUps')" type="checkbox">
+                  <span [ngClass]="{visible: checkItems(item, 'startUps')}" class="checkmark hidden-ch"></span>
+                </td>
+                <td (click)="selectPartC($event, item, 'incubators')" [ngClass]="{diffSelect:checkItems(item, 'incubators') }" class="text-center curs_pointer custon-ch">
+                  <input [checked]="checkItems(item, 'incubators')" type="checkbox">
+                  <span [ngClass]="{visible:checkItems(item, 'incubators') }" class="checkmark hidden-ch"></span>
+                </td>
+                <td (click)="selectPartC($event, item, 'research')" [ngClass]="{diffSelect: checkItems(item, 'research') }" class="text-center curs_pointer custon-ch">
+                  <input [checked]="checkItems(item, 'research')" type="checkbox">
+                  <span [ngClass]="{visible: checkItems(item, 'research') }" class="checkmark hidden-ch"></span>
+                </td>
+                <td (click)="selectPartC($event, item, 'corporate')" [ngClass]="{diffSelect: checkItems(item, 'corporate') }" class="text-center curs_pointer custon-ch">
+                  <input [checked]="checkItems(item, 'corporate')" type="checkbox">
+                  <span [ngClass]="{visible: checkItems(item, 'corporate') }" class="checkmark hidden-ch"></span>
+                </td>
+                <td (click)="selectPartC($event, item, 'ventureCapital')" [ngClass]="{diffSelect: checkItems(item, 'ventureCapital') }" class="text-center curs_pointer custon-ch">
+                  <input [checked]="checkItems(item, 'ventureCapital')" type="checkbox">
+                  <span [ngClass]="{visible: checkItems(item, 'ventureCapital') }" class="checkmark hidden-ch"></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-2 pl-0">
+      <button (click)="saveProjects()" [ngClass]="{'disabled': noValid }" class="btn btn-unique-edit ed-2">
+        <i class="fa fa-check mr-2"></i>Save</button>
+    </div>
+  </div>

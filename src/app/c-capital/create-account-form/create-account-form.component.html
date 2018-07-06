@@ -1,0 +1,20 @@
+<section class="form-inscription">
+    <h4>je crée mon compte gratuitement</h4>
+    <div class="medium-form">
+        <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit()">
+            <input type="text" placeholder="Raison sociale*" formControlName="bh_functions" id="bh_functions" class="form-control" mdbActive validate required="required">
+            <span class="field-necessary" *ngIf="registerForm.controls.bh_functions.invalid && registerForm.controls.bh_functions.touched"><i>* Champs nécéssaire</i></span>
+            <input type="text" placeholder="Nom" formControlName="bh_lastname" id="bh_lastname" class="form-control" mdbActive validate required="required">
+            <span class="field-necessary" *ngIf="registerForm.controls.bh_lastname.invalid && registerForm.controls.bh_lastname.touched"><i>* Champs nécéssaire</i></span>
+            <input type="text" placeholder="Prenom" formControlName="bh_firstname" id="bh_firstname" class="form-control" mdbActive validate required="required">
+            <span class="field-necessary" *ngIf="registerForm.controls.bh_firstname.invalid && registerForm.controls.bh_firstname.touched"><i>* Champs nécéssaire</i></span>
+            <input type="email" placeholder="E-mail*" formControlName="bhemail" id="bhemail" class="form-control" mdbActive validate required="required">
+            <span>
+            <span class="field-necessary" *ngIf="registerForm.controls.bhemail.invalid && registerForm.controls.bhemail.touched && !used_email && !em_empty"><i>Email invalide</i></span>
+            <span class="field-necessary" *ngIf="registerForm.value.bhemail == '' && registerForm.controls.bhemail.touched && !used_email && em_empty "><i>* Champs nécéssaire</i></span>
+            <span class="field-necessary" *ngIf="used_email"><i>Email deja Utilisée</i></span>
+            </span>
+            <button type="submit" class="btn btn-success btn-block btn-rounded z-depth-1 bg-form">ouvrir mon compte gratuit</button>
+        </form>
+    </div>
+</section>

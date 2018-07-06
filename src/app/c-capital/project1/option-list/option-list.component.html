@@ -1,0 +1,30 @@
+<div class="form-inline my-2 my-md-0 option-list">
+    <div class="option-div"> 
+      <select class="" (change)="changeCollab($event)">
+        <option value="all"  selected>All</option>
+        <option *ngFor="let item of collabType" 
+          value="{{item.slug}}" >{{item.text}}</option>
+      </select>
+        <span class="option-select">Collaboration type</span>
+    </div>
+    <div class="option-div">
+        <select class="select-two" (change)="changeActivity($event)">
+        <option value="all" selected>All</option>
+        <option value="startup">Startup</option>
+        <option value="searcher">Searcher</option>
+        <option value="established_company">Established company</option>
+        <option value="research_laboratory">Research Laboratory</option>
+        <option value="incubator">Incubator</option>
+    </select>
+        <span class="option-select">Activity</span>
+    </div>
+    <div class="option-div">
+        <select class="" (change)="changeCountry($event)">
+        <!-- <option value=""  selected>France</option>  -->       
+        <option *ngFor="let country of countries" 
+        [attr.selected]="country == 'France' ? true : null"
+        [attr.value]='country | lowercase' >{{country}}</option>
+    </select>
+        <span class="option-select">Country</span>
+    </div>
+</div>

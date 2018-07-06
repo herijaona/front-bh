@@ -1,0 +1,193 @@
+<div *ngIf="readyData  && activated" class="">
+  <div class="col-container">
+    <div class="row top-r">
+      <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 p-info-team">
+        <div class="card card-profile">
+          <div class="card-body">
+            <div class="mb-4">
+              <p-info [details_]="details"></p-info>
+              <div class="btn-edit-up">
+                <!-- <button (click)="gotoProfileEdit()" type="button" class="btn  btn-block darken-edit ed">
+                  <i class="fa fa-pencil"></i>
+                  <span>Edit profile</span>
+                </button> -->
+              </div>
+            </div>
+            <p-completion></p-completion>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 invite_team">
+        <div class="">
+          <div>
+            <h5 class="profile-h5">Invite a coworker</h5>
+            <hr>
+            <form class="invite_team_form" [formGroup]="inviteForm" (ngSubmit)="submitinvite()">
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <label for="frst" class="grey-text-form">First Name</label>
+                  <input formControlName="firstname" type="text" id="frst" class="form-control">
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <label for="lstn" class="grey-text-form">Last Name</label>
+                  <input formControlName="lastname" type="text" id="lstn" class="form-control">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <label for="email_" class="grey-text-form">email</label>
+                  <input formControlName="email" type="email" id="email_" class="form-control">
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <span class="mg-left-wt">
+                    <label for="invite-for" class="grey-text-form">invited for</label>
+                    <p id="invite-for">
+                      <label class="custon-ch">
+                        <span>team</span>
+                        <input formControlName="invAsTeam" type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                      </label>
+                      <label class="custon-ch ch-second">
+                        <span>Committee</span>
+                        <input formControlName="invAsComm" type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    </p>
+                  </span>
+                </div>
+              </div>
+              <div class="row">
+                <button [ngClass]="{disabled: !inviteForm.valid}" class="btn btn-unique-edit btn-width ed-2 col-md-6 col-sm-6 col-xs-12"
+                        type="submit">
+                  <span class="edit-person send-edit">Send invite</span>
+                </button>
+                <div class="col-md-6 col-sm-6 col-xs-12 nb-team">
+                  <p>
+                    <strong>Team :</strong> You can invite others to share collaborations.</p>
+                  <p>
+                    <strong>Committee :</strong> It is the members who select the candidates. They are posted on the page of your
+                    website called committee
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid invite_team mt-3">
+      <div class="">
+        <div class="mbr-team">
+          <h5 class="profile-h5">Members Team</h5>
+          <div class="row brth">
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12  br-1">
+              <ul class="navbar-nav mg-4 flex-dt dt-ligne">
+                <li class="nav-item mg-0 mg-no-active admin" [ngClass]="{'mg-no-active': adminAll}">
+                  <a (click)="viewUsersTeams('admin')" [ngClass]="{'active-nav': adminAll,'no-active-nav': !adminAll  }" class="nav-link">Administration</a>
+                </li>
+                <li class="nav-item mg-0" [ngClass]="{'mg-no-active': invitedShow}">
+                  <a (click)="viewUsersTeams('community')" class="nav-link" [ngClass]="{'active-nav': invitedShow,'no-active-nav': !invitedShow  }">Pending invitations</a>
+                </li>
+              </ul>
+            </div>
+            <!--  <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 font-all  br-2">
+              <ul class="navbar-nav mg-4 flex-dt float-right ds-flex">
+                <li class="nav-item"><a class="nav-link"><span class="font-bold">19</span>Teams</a></li>
+                <li class="nav-item"><a class="nav-link"><span class="font-bold">65</span> Comittee</a></li>
+                <li class="nav-item"><a class="nav-link"><span class="font-bold">32</span> Invitations send</a></li>
+                <li class="nav-item icon-th"><a class="nav-link"><i class="fa fa-th-large large-size" aria-hidden="true"></i></a></li>
+                <li class="nav-item icon-th"><a class="nav-link"><i class="fa fa-bars bars-size"></i></a></li>
+              </ul>
+            </div> -->
+          </div>
+          <ng-template [ngIf]="adminAll">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                <tr class="head-ad">
+                  <th>Photo</th>
+                  <th>Name</th>
+                  <th>Job</th>
+                  <th class="text-center">Team</th>
+                  <th class="text-center">Committee</th>
+                  <th class="text-center">Remove</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of userAdminData">
+                  <th class="tb">
+                    <div class="media">
+                      <img *ngIf="item.imageProfile" [src]="item.imageProfile" alt="{{item.firstname+' '+item.lastname }}" class="mr-3 rounded-circle"
+                           width="60px" height="60px">
+                      <img *ngIf="!item.imageProfile" [src]="img_avatar" alt="{{item.firstname+' '+item.lastname }}" class="mr-3 rounded-circle"
+                           style="width:60px;">
+
+                    </div>
+                  </th>
+                  <td class="tb">
+                    <div class="media-body fh">
+                      <span>{{item.firstname+" "+item.lastname }}</span>
+                      <h6 class="mb-0">
+                        <i>{{item.email}}</i>
+                      </h6>
+                    </div>
+                  </td>
+                  <td class="tb fh">{{item.function}}</td>
+                  <td class="text-center">
+                    <label class="custon-ch ch-second">
+                      <input type="checkbox" (change)="teamCommChange($event,'tAdm', item)" [checked]="item.isAdm">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td class="text-center">
+                    <label class="custon-ch ch-second">
+                      <input type="checkbox" (change)="teamCommChange($event,'comm', item)" [checked]="item.isComm">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td>
+                  <td class="text-center">
+                    <i (click)="deleteFromTeamList(item)" style="cursor: pointer;" class="fa fa-trash fa-remove"></i>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </ng-template>
+          <ng-template [ngIf]="invitedShow">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                <tr class="head-ad">
+                  <th>Date</th>
+                  <th>Author</th>
+                  <th>Guest</th>
+                  <th class="text-center">Status</th>
+                  <th class="text-center">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of userInvitedData" class="tr-pending">
+                  <td>{{item.dateAdd}}</td>
+                  <td>{{item.invintedbyUser.lastname+' '+item.invintedbyUser.firstname }}</td>
+                  <td>
+                    {{item.lastname+' '+item.firstname}}
+                  </td>
+                  <td class="text-center">
+                    Pending
+                  </td>
+                  <td class="text-center">
+                      <span style="cursor: pointer;" (click)="reviveInvitation(item._id)">
+                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                      </span>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </ng-template>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

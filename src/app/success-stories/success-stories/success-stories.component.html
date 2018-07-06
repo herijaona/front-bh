@@ -1,0 +1,77 @@
+<page-header [pageCurrent]="sstr_page"></page-header>
+<div class="portailpage-data">
+  <edit-page-button class="ultimeeditActiveButton"></edit-page-button>
+  <div class="container-fluid grid grid-top">
+    <!-- <div *ngIf="editPAGEstatus" class="edit_">
+      &nbsp;
+      <a class="waves-light p-2 mb-2 addBut" mdbWavesEffect (click)="addNewSstr()"><i class="fa fa-plus mr-2 "></i> ADD NEW</a>
+    </div> -->
+    <div *ngIf="readySstrData" class="row">
+      <div *ngFor="let item of sstrAll" class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+        <div *ngIf="editPAGEstatus" class="edit-delete">
+          <div class="itw">
+            <a (click)="editSstr(item)">
+              <i class="fa fa-pencil fa-pen"></i>
+            </a>
+          </div>
+          <div class="itw">
+            <a (click)="deleteSstr(item)">
+              <i class="fa fa-trash fa-del"></i>
+            </a>
+          </div>
+        </div>
+        <div class="posters" (click)="showTeamVideo(item)">
+          <a>
+            <img [src]="item.im_poster" alt="" width="100%" height="">
+          </a>
+          <div class="overlay_">
+            <i class="fa fa-play"></i>
+          </div>
+        </div>
+        <h2>{{item.caption}}</h2>
+        <p class="view-video">12 vues - il y a 5 Semaines</p>
+      </div>
+    </div>
+  </div>
+  <div mdbModal #modalsstr="mdb-modal" class="modal fade" id="basicExample" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true" [config]="{animated: true, ignoreBackdropClick: true, backdrop: 'static'}">
+    <div class="modal-dialog modal-lg" role="document">
+      <div *ngIf="modalStateCnt" class="modal-content success-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100" id="myModalLabel">Success Stories</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closemodalsstr()">
+            <span aria-hidden="true">x</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <edit-new-sstr [toDoAct_]="toDoAction" [sstrData_]='SelectedSstr'></edit-new-sstr>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal video play-->
+<div (onhide)="hiddedModal()" *ngIf="showDataState" style="overflow: auto;" mdbModal #showVideoPlay="mdb-modal" class="modal fade"
+  id="modalZoneForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+  <div class="modal-dialog cascading-modal modal-lg" role="document">
+    <!--Content-->
+    <div class="modal-content md-content">
+      <!--Header-->
+      <div class="modal-header md-header">
+        <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="showTeamVideoCLose()">
+          <span aria-hidden="true">
+            <i class="fa fa-window-close"></i>fermer</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body mb-0">
+        <div [innerHtml]="videoTeamPlay|bhSafeHtml" class="md-video text-center">
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+</div>

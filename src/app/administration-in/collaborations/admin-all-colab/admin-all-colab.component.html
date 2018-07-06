@@ -1,0 +1,67 @@
+<div class="col-container">
+  <app-spin-data-ready [ready]='!readyData'></app-spin-data-ready>
+  <div *ngIf="readyData" class="table-respo">
+    <h3 class="m-yq">My collaborations :</h3>
+    <!-- Don't has data -->
+    <div *ngIf="!hasData">
+        <p class="hasdata">
+          Hello,
+          <br> For the moment you do not have an offer of collaborations but you can create some on the menu "CREATE A COLLABORATION
+          TYPE"
+        </p>
+      </div>
+    <!--Table-->
+    <table *ngIf="hasData" class="table appli-table table-striped">
+      <!--Table head-->
+      <thead class="head-color">
+        <tr class="text-bl">
+          <th class="col-name">Collaboration name</th>
+          <th class="type">Type</th>
+          <th class="type">Date</th>
+          <th class="author">Author</th>
+          <th class="number">Number</th>
+        </tr>
+      </thead>
+      <!--Table head-->
+      <!--Table body-->
+      <tbody>
+        <tr *ngFor="let item of listCollab">
+          <td>
+            <a class="bn" target="_blanck" [routerLink]="['/administration-in','collaborations','application-received','by-collaborations', item._id ]">{{item.name}}</a>
+          </td>
+          <td class="type">{{g.getCollabtypetext(item.type)}}</td>
+          <td>{{item.date}}</td>
+          <td>{{item.author.firstname +" "+ item.author.lastname}}</td>
+          <td>
+            {{item.interaction_number}}
+          </td>
+        </tr>
+      </tbody>
+      <!--Table body-->
+    </table>
+    <!--Table-->
+  </div>
+  <h3 class="m-yq">External collaborations :</h3>
+  <div class="mt-3">
+    <table class="table appli-table table-striped">
+        <thead class="head-color">
+          <tr class="text-bl">
+              <th class="type">date</th>
+              <th class="author">Organisation</th>
+              <th class="type">Type</th>
+              <th class="col-name">Collaboration name</th>
+              <th class="author">Interaction</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of withcolab">
+            <td>{{item.slDate}}</td>
+            <td>{{item.orgCollab.enseigneCommerciale}}</td>
+            <td>{{g.getCollabtypetext(item.typeCollab)}}</td>
+            <td><a [routerLink]="['/administration-in','collaborations','deal-space','deal', item.dealID]">{{item.collabName}}</a></td>
+            <td>{{item.interAction}}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>

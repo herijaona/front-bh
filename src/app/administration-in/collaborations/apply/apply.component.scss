@@ -1,0 +1,27 @@
+$green: #71BF71;
+
+h2 {
+    color: #e63636;
+    font-size: 22px;
+    font-family: SourceSansPro-Regular;
+}
+
+h3 {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #393f4b;
+    font-family: SourceSansPro-Semibold;
+}
+
+.bg-col {
+    background: #393f4b !important;
+    margin-top: -2px;
+    h1 {
+        color: white;
+        font-size: 24px;
+        font-family: SourceSansPro-Bold;
+        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+}

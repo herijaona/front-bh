@@ -1,0 +1,70 @@
+<navbar-admin></navbar-admin>
+<nav class="navbar navbar-expand-sm nav-tel">
+  <ul class="navbar-nav ns">
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/administration-in','communities']">Members</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','communities','communities']">Communities</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','communities','community-space']">Community spaces</a>
+    </li>
+    <!-- <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','communities','ecosystem']">Ecosystem</a>
+        </li> -->
+    <!-- <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','communities','ideas']">Ideas</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','communities', 'questions']">Questions</a>
+    </li> -->
+  </ul>
+  <ul class="navbar-nav ns float-r">
+    <li class="nav-item">
+      <a class="nav-link select-col" (click)="showMod()">
+        <i class="fa fa-plus"></i>New Community</a>
+    </li>
+  </ul>
+  <div class="icon-plus" (click)="toggleCollapse2()">
+      <i class="tp fa fa-plus"></i>
+  </div>
+</nav>
+<div class="">
+  <router-outlet></router-outlet>
+</div>
+
+
+<!-- Modal video play-->
+<div style="overflow: auto;" mdbModal #modalHist="mdb-modal" class="modal fade" id="modalZoneForm" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+  <div class="modal-dialog" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header md-new">
+        <h2>
+          <img class="img-responsive cnc" src="{{g.base_href}}assets/img/cnc.png">Create new Community
+        </h2>
+      </div>
+      <!--Body-->
+      <div class="modal-body mb-0">
+        <form [formGroup]='newCommForm'>
+          <div class="input-md">
+            <label>Name</label>
+            <input placeholder="Community name" formControlName="name" class="form-control" mdbActive validate required="required">
+          </div>
+          <div class="pb-3 input-md">
+            <label>Description</label>
+            <textarea formControlName="description" rows="7" cols="50" placeholder="Overall Satisfaction Question" type="text" class="osq"></textarea>
+          </div>
+          <div class="flex fx">
+            <a class="nav-link select-col fca" (click)="hideModal()">Cancel</a>
+            <a [ngClass]="{disabled: !newCommForm.valid}" type="submit" class="nav-link select-col fc" (click)="onSubmitNewCommunities()">Create Community</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>

@@ -1,0 +1,87 @@
+.grid{
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: none;
+}
+.font-weight-bold{
+    color: #000000;
+    font-size: 21px;
+    span{
+	    color: #e93a35;
+	    font-size: 13px;
+	    text-transform: capitalize;
+	    padding-left: 7px;
+    }
+}
+.btn-wnt{
+	background: #87888d;
+    font-size: 13px;
+    border-radius: 3px;
+    box-shadow: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px 21px 10px 22px;
+    letter-spacing: 0.7px;
+    @media(max-width:450px){
+		width: 100%;
+		margin: 8px auto;
+	}
+}
+.btn-crt{
+	background: linear-gradient(-90deg, #e83936, #f94d37);
+    border-left: inherit;
+    border-radius: 3px;
+    font-size: 13px;
+    box-shadow: none;
+    font-weight: bold;
+    text-transform: initial;
+    padding: 10px 22px 10px 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    @media(max-width:450px){
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+.status-person>p{
+    color: gray;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    font-family: SourceSansPro-Regular;
+}
+.icon-question{
+	padding-left: 5px;
+}
+.lead{
+	text-align: right;
+}
+.col-3-edit{
+	width: 18%;
+	@media(max-width:1105px){
+		width: 21%;
+	}
+	@media(max-width:872px){
+		width: 30%;
+	}
+	@media(max-width:450px){
+		width: 100%;
+	}
+}
+.col-8-edit{
+	width: 82%;
+	padding: 12px 20px 0px 34px;
+	@media(max-width:1105px){
+		width: 78%;
+	}
+	@media(max-width:872px){
+		width: 70%;
+	}
+	@media(max-width:450px){
+		width: 100%;
+		padding:5px;
+	}
+}
+.card-profile{
+	margin-top: 20px;
+}

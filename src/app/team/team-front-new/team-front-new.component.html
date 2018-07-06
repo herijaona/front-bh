@@ -1,0 +1,55 @@
+<form [formGroup]="teamVideoForm" (ngSubmit)="saveTeamVideoFront()">
+  <div class="row">
+    <div class="col-md-7 pl-0">
+      <div class="label-text">
+        <label>Caption</label>
+        <input formControlName="tvCaption" type="text" name="" class="input-story">
+      </div>
+
+      <div class="label-text">
+        <label>Type</label>
+        <select (change)="chooseType($event)" [value]='selectedType'>
+          <option value="0">Image</option>
+          <option value="1">Video</option>
+        </select>
+      </div>
+      <ng-template [ngIf]="selectedType == 1">
+
+        <div class="label-text">
+          <label>Video Url</label>
+          <input class="input-story" (change)="urlSetted($event)" (blur)="urlSetted($event)" (keyup)="urlSetted($event)" formControlName="tvVideoUrl"
+            type="url" name="">
+        </div>
+
+      </ng-template>
+      <ng-template [ngIf]="selectedType == 0">
+        <im-select [entity]="cpy_entity" [im_to]='dest_file'></im-select>
+      </ng-template>
+
+      <div class="label-text dsp-g">
+        <label>Team:</label>
+        <select formControlName="tvteamMember">
+          <option value="0"> Choose Team member</option>
+          <option [value]="item._id" *ngFor="let item of team_person">{{item.name_+' - '+item.fn}}</option>
+          <span *ngIf="userNotSelected">Required</span>
+        </select>
+      </div>
+
+    </div>
+    <div class="col-md-5">
+      <img width="100%" [src]="im_poster" alt="">
+    </div>
+  </div>
+  <div class="label-text">
+    <label>
+      Team Texte:
+    </label>
+    <ckeditor name="myEditor" placeholder="" formControlName="editorText" [config]="g.conf_editor" [readonly]="false" (change)="onChangeEditor($event)"
+      (editorChange)="onEditorChange($event)" (ready)="onReady($event)" debounce="500">
+    </ckeditor>
+  </div>
+  <div class="">
+    <button [ngClass]="{'disabled': !teamVideoForm.valid || !validDataEntry() }" class="btn btn-default bg-sign  ">
+      <i class="fa fa-save mr-2"></i>save</button>
+  </div>
+</form>

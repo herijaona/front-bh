@@ -1,0 +1,11 @@
+<div class="presentation">
+	<div class="">
+			<h2 class="cl-h2">
+				<div class="pst">Presentation</div>
+				<section-edit-button *ngIf="editPAGEstatus" [section_]="current_section"></section-edit-button>
+			</h2>
+	</div>
+	<div *ngIf="!presentationEditState" [innerHtml]="presentationData | bhSafeHtml" class="present">...</div>
+	<!-- <h2>Le Lorem Ipsum</h2> -->
+	<quill-editor [(ngModel)]="editorPresentationModel" theme="bubble" *ngIf="presentationEditState"></quill-editor>
+</div>

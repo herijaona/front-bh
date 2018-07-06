@@ -1,0 +1,140 @@
+$color1 : #393f4b;
+$color2: #f8f8fa;
+$color3: #e83936;
+.grid-project{
+	width:90%;
+	margin:0 auto;
+}
+i{
+	padding-right: 8px;
+}
+button{
+    border-radius: 4px;
+}
+.bg-form{
+	background:$color3;
+	text-transform:uppercase;
+}
+/* form */
+.form-control, .custom-autocomplete input {
+    width: 100% !important;
+    height: 24px !important;
+    font-size: 0.75rem !important;
+    line-height: 1.5 !important;
+    color: #495057 !important;
+    background-color: #fff !important;
+    background-clip: padding-box !important;
+    border: transparent;
+    border-radius: .25rem !important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out !important;
+    padding-left: 14px !important;
+    box-sizing: border-box !important;
+    padding: 22px !important;
+}
+/* end form */
+
+.request-information{
+	.bg{
+		position: absolute;
+	    width: 100%;
+	    height: 360px;
+	    z-index: -1;
+	}
+	.open{
+		color: #6e7c85;
+		font-weight: bold;
+	    font-size: 22px;
+	    margin-top: 25px;
+	    margin-bottom: .857em;
+	}
+	.footerlegal{
+    	color: white;
+    	margin-top: 75px;
+    	p{
+	    	opacity: 0.8;
+		    font-weight: 500;
+		    font-size: 11px;
+    	}
+    	a{
+    		color: white;
+    	}
+	}
+	.mt-75{
+    	margin-top: 75px;
+    	    @media(max-width:991px){
+
+    	    	margin-top: 27px;
+    			text-align:center;
+    			img{
+    				width: 180px;
+    			}
+    			h3{
+    				font-size: 17px;
+				    margin-top: 3px;
+				    margin-bottom: 1px;
+    			}
+    			.footerlegal{
+    				margin-top: 13px;
+    			}
+    		}
+    	}
+    @media(max-width:991px){
+    	.bg{
+    			width: auto;
+    			height: 716px;
+    	}
+    	.request-h3{
+    		    padding-top: 0px !important;
+    	}
+    	.pm-0{
+    		padding:0px;
+    	}
+    	.btn-footer{
+    		bottom: inherit !important;
+    	}
+    }
+
+    .textarea-info{
+    	height: 167px !important;
+    	padding: 12px !important;
+    	font-size: 11px !important;
+    }
+    .btn-footer{
+    	position: absolute;
+	    bottom: 0;
+	    right: 0;
+	    margin: 0;
+	    max-width: 200px;
+	    border: none;
+	    text-transform: uppercase;
+	    color: #FFF;
+	    font-weight: 600;
+	    height: 45px;
+	    line-height: 45px;
+	    padding: 0 !important;
+    }
+    input{
+    	margin-bottom: 16px;
+    	font-size: 0.75rem !important;
+    }
+    .request-h3{
+    	position: relative;
+	    overflow: hidden;
+	    font-weight: 600;
+	    line-height: 30px;
+	    font-size: 21px;
+	    color: white;
+	    padding-top: 62px;
+    }
+    .request-h3:after{
+    	content: "";
+	    width: 100%;
+	    position: absolute;
+	    margin-right: -310px;
+	    top: 83%;
+	    right: 0;
+	    height: 2px;
+	    background: rgba(255,255,255,0.3);
+	    display: block;
+    }
+}

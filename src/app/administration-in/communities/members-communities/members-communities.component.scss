@@ -1,0 +1,157 @@
+.appli-table {
+  td a {
+    color: #0275d8;
+  }
+  td a:hover {
+    border-bottom: 1px solid #0275d8;
+  }
+  tbody tr:hover {
+    background: #ff00001a !important;
+    cursor: pointer;
+  }
+  tbody {
+    td {
+      border-top: none;
+    }
+  }
+  .text-bl {
+  }
+  .bn {
+    padding-left: 7px;
+  }
+}
+.select-col{
+  color: white !important;
+  background: #f73547;
+  border: 0px solid;
+  display: inherit;
+  font-family: SourceSansPro-Semibold;
+}
+.select-col:hover{
+  border: 0px solid !important;
+}
+.mt-custom {
+  margin-top: 4rem
+}
+.members-yet{
+  font-size: 17px;
+  font-family: SourceSansPro-Regular;
+  top: 70px;
+  position: relative;
+  text-align: center;
+  color: #e64047;
+}
+.about{
+  width: 20%;
+}
+.date{
+  min-width: 113px;
+}
+.firstname{
+  max-width: 97px;
+}
+.org{
+  max-width: 97px;
+  min-width: 154px;
+}
+/* checkbox */
+
+.custon-ch {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  span:first-child {
+      font-family: SourceSansPro-Regular;
+      top: -2px;
+      position: relative;
+  }
+}
+
+.custon-ch input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border: 1px solid #60606024;
+  border-radius: 4px;
+}
+
+.custon-ch:hover input~.checkmark {
+  background-color: #ccc;
+}
+
+.custon-ch input:checked~.checkmark {
+  background: linear-gradient(-90deg, #e83936, #f94d37);
+  border-radius: 4px;
+  border: 0px;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.custon-ch input:checked~.checkmark:after {
+  display: block;
+}
+
+.custon-ch .checkmark:after {
+  left: 8px;
+  top: 3px;
+  width: 6px;
+  height: 11px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* end checkbox */
+#modalZoneForm{
+  background-color: #00000057;
+}
+.mh{
+  .md-new{
+    color: #f73547cc;
+    font-size: 15.5px;
+    font-family: SourceSansPro-Regular;
+    text-align: center;
+    border-bottom: 1.5px solid #f7354769;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.fca{
+  background: #929292;
+  color: white !important;
+  font-family: SourceSansPro-Semibold;
+  font-size: 14px;
+  padding: 8px 15px 8px 15px;
+  height: 38px;
+  cursor: pointer;
+}
+.fc{
+  background: #f73547;
+  color: white !important;
+  font-family: SourceSansPro-Semibold;
+  margin-left: 10px;
+  font-size: 14px;
+  padding: 8px 15px 8px 15px;
+  height: 38px;
+  cursor: pointer;
+}

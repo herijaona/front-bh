@@ -1,0 +1,56 @@
+<navbar-admin></navbar-admin>
+<!-- <nav class="navbar navbar-expand-sm nav-tel">
+<ul class="navbar-nav ns">
+  <li class="nav-item" >
+    <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/administration-in','desk']">Team</a>
+  </li>
+  <li class="nav-item" >
+    <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','desk','questions']">Questions</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLinkActive="active"  [routerLink]="['/administration-in','desk', 'applications']">Applications</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLinkActive="active"  [routerLink]="['/administration-in','desk', 'favorite']">Favorite</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLinkActive="active"  [routerLink]="['/administration-in','desk', 'invited-organisation']">invited organizations</a>
+  </li>
+</ul>
+opportunity
+</nav> -->
+<div class="col-container mt-custom">
+  <table class="table appli-table table-striped">
+    <thead class="head-color">
+      <tr class="text-bl">
+        <th>Organisation</th>
+        <th>Country</th>
+        <th>Type</th>
+        <th>Collaboration Name</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Job</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of opportuinityList">
+        <td>{{item.organisation}}</td>
+        <td>{{item.country}}</td>
+        <td>{{getCollabtypetext(item.typeCollab)}}</td>
+        <td>
+          <a target="_blank" [routerLink]="[ '/open-innovation' , item.org_slug , 'details-project' , item._id ]">
+            {{item.name}}
+          </a>
+        </td>
+        <td>{{item.byUser.firstname}}</td>
+        <td>{{item.byUser.lastname}}</td>
+        <td>{{item.byUser.function}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<main class="">
+  <div class="ml-16">
+    <!-- <router-outlet></router-outlet> -->
+  </div>
+</main>

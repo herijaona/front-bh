@@ -1,0 +1,53 @@
+<div class="">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 text-center mb-responsive">
+            <div class="avatar mx-auto my-3">
+                <div class="position-realtive pve">
+                    <span class="tooltip-top">min : 200px X 200px</span>
+                    <img [src]="img_avatar" class="rounded-circle img-fluid min-width-avatar" alt="First sample avatar image" width="105px">
+                    <div (click)="modifyProfileImage()" class="overlay_ pic rounded-circle">
+                        <span>edit</span>
+                        <i class="fa fa-photo chck"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 text-left mb-responsive pt-3">
+            <h3 class="font-weight-bold ftw">
+                <strong>{{ details.lastname+' '+details.firstname }}</strong>
+            </h3>
+            <!-- <p class="grey-text-bold">{{ details.email }}
+        <br>
+        <span>{{ details.function }}</span></p> -->
+            <!--  <p class="span-connect">
+        <span>349</span>&nbsp;connections
+        <span>19</span>&nbsp;profils views
+      </p> -->
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="toModifyIm" mdbModal #imProfileChanges="mdb-modal" class="modal fade" id="basicExample" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [config]="{animated: true, ignoreBackdropClick: true, backdrop: 'static'}">
+    <div class="members-mod modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title w-100" id="myModalLabel">Select Image</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="hideProfileImModal()">
+          <span aria-hidden="true">×</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <im-select [entity]="cpy_entity" [im_to]='dest_file'></im-select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="nav-link select-col fca" data-dismiss="modal" (click)="hideProfileImModal()" mdbWavesEffect>Close</button>
+                <button (click)="saveImProfile()" [ngClass]="{disabled: !selectedImage }" type="button" class="nav-link select-col fc" mdbWavesEffect>Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

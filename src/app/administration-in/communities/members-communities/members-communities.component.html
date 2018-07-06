@@ -1,0 +1,90 @@
+<div class="col-container">
+  <ng-template [ngIf]="communityShow">
+    <div class="mt-custom table-responsive">
+      <table class="table appli-table">
+        <thead class="head-color">
+          <tr class="text-bl">
+            <th class="date">Date</th>
+            <th class="org">Organisation</th>
+            <th class="org">First Name</th>
+            <th class="org">Last Name</th>
+            <th class="org">Activity</th>
+            <th class="org">Last</th>
+            <th class="about">About</th>
+            <th class="org">Community</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of userCommData">
+            <td>{{getDateString(item.last_date)}}</td>
+            <td>{{item.org}}</td>
+            <td class="tb">{{item.us.firstname}}</td>
+            <td class="tb">{{item.us.lastname}}</td>
+            <td>d</td>
+            <td>d</td>
+            <td>
+              <span *ngIf="item.last_act !='application'" class="text-capitalize">
+                {{item.last_act}}
+              </span>
+              <span *ngIf="item.last_act =='application'" class="text-capitalize">
+                {{item.lastPrName}}
+              </span>
+            </td>
+            <td class="">
+              <a *ngIf="item.community.length === 0" class="nav-link select-col" (click)="showModal(item.community, item.us._id)">Select</a>
+              <a *ngIf="item.community.length > 1" (click)="showModal(item.community, item.us._id)">
+                <span>{{item.community.length}}</span>
+              </a>
+              <a *ngIf="item.community.length === 1" (click)="showModal(item.community, item.us._id)">
+                <span *ngFor="let cData of item.community">{{cData.name}}</span>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- <div class="text-right">
+      <a class="btn-tab1">1</a>
+      <a class="btn-tab2">2</a>
+      <a class="btn-tab2">2</a>
+      <a class="btn-tab3">Suivant</a>
+    </div> -->
+  </ng-template>
+  <ng-template [ngIf]="anyUser">
+    <div class="members-yet">There are no members yet</div>
+  </ng-template>
+</div>
+
+<div style="overflow: auto;" mdbModal #modalSet="mdb-modal" class="modal fade"
+  id="modalZoneForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+  <div class="modal-dialog" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="mh">
+        <h3 class="modal-header md-new">
+          Select Community to add this user 
+        </h3>
+      </div>
+      <!--Body-->
+      <div class="modal-body mb-0">
+        <div class="row">
+          <div *ngFor="let iit of allComm" class="col-4">
+            <p id="invite-for">
+              <label class="custon-ch">
+                <span for="collab-{{indx}}" class="agree">{{iit.name}}</span>
+                  <input type="checkbox" [checked]="checkIfIn(iit._id)" (change)="changeState($event, iit._id)">  
+                  <span class="checkmark"></span>
+              </label>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button (click)="modalSet.hide()" class="nav-link select-col fca">Cancel</button>
+        <button (click)="saveUserCommunitiesChange()" [ngClass]="{disabled: !icheckChange()}" class="nav-link select-col fc">Save</button>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>

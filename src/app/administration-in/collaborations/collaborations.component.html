@@ -1,0 +1,56 @@
+<navbar-admin></navbar-admin>
+<nav class="navbar navbar-expand-sm nav-tel" *ngIf="dp">
+    <ul class="navbar-nav ns">
+        <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/administration-in','collaborations']">My collaborations</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','collaborations','questions']">Questions</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','collaborations','application-received']">Applications received</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','collaborations','application-sent']">Applications sent</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','collaborations','deal-space','list']">Deal space</a>
+        </li>
+        <!-- <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','collaborations','received-invitations']">Received invitations</a>
+        </li> -->
+        <!-- <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','collaborations','received-invitations']">Received invitations</a>
+        </li> -->
+
+        <!-- <li class="nav-item">
+      <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','collaborations','create-collaboration']">Create collaboration</a>
+    </li> -->
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','collaborations','apply']">Apply</a>
+    </li> -->
+    </ul>
+    <ul class="navbar-nav ns float-r">
+        <li class="nav-item">
+            <a class="nav-link select-col">Create a collaboration type&nbsp;&nbsp;:</a>
+        </li>
+        <li *ngFor="let item of collabTypes; let i=index" class="nav-item">
+            <a *ngIf="i<4" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/administration-in','collaborations','create', item.slug]">
+      {{item.text}}</a>
+        </li>
+    </ul>
+    <div class="icon-plus" (click)="toggleCollapse2()">
+        <i class="tp fa fa-plus"></i>
+    </div>
+</nav>
+
+<!--   <label class="select-col">Select Collaboration type &nbsp;&nbsp;:&nbsp;&nbsp;</label>
+  <select (change)="selectTypeCollab()" [(ngModel)]='selctCollab' >
+     <option *ngFor="let item of collabTypes" [selected]="item.selected == true" value="{{item.slug}}">{{item.text}}</option>
+  </select> -->
+
+<main class="collaboration-container">
+    <div class="ml-16">
+        <router-outlet></router-outlet>
+    </div>
+</main>

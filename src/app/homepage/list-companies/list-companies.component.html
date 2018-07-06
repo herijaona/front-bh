@@ -1,0 +1,50 @@
+<div class="container" *ngIf="companies_data">
+  <h5 style="margin-top: 40px; margin-bottom: 10px">COMPANIES</h5>
+  <hr>
+  <div *ngIf="companies_data" class="">
+    <div class="row">
+      <div *ngFor="let c_ of companies_data" class="col-lg-4 col-md-6 col-sm-6">
+        <div class="card card-stats">
+          <div class="card-header" data-background-color="transparent">
+            <!-- <i class="material-icons">weekend</i> -->
+            <a [routerLink]="['/open-innovation',c_._slug,'acceuil']"> 
+                            <img [src]="c_.Logo" alt="">
+                        </a>
+          </div>
+          <div class="card-content">
+            <p class="namecommerce text-capitalize">
+              <a [routerLink]="['/open-innovation',c_._slug,'acceuil']">
+                            {{c_.enseigneCommerciale}}
+                        </a>
+            </p>
+            <h6 class="card-title"> <i>{{c_.adresse}}</i></h6>
+          </div>
+          <div class="card-body">
+            <span class="erd "><i class="fa fa-bookmark" aria-hidden="true"></i></span > &nbsp; 
+            - 
+            <span class="text-capitalize" >
+                        {{ getACTIVITY(c_.activityArea) }}                            
+                        </span>
+          </div>
+          <div class="card-footer">
+            <div class="stats nimb">
+              <span title="Employees">
+                                <i class="fa fa-users" aria-hidden="true"></i>
+                                <span style="margin-left: 5px">15</span>
+              </span> &nbsp; | &nbsp;
+              <span title="Projets">
+                                <i class="fa fa-tasks" aria-hidden="true"></i>
+                                <span style="margin-left: 5px">15</span>
+              </span> &nbsp; | &nbsp;
+              <span title="Opportinuite">
+                                <i class="fa fa-id-card" aria-hidden="true"></i>
+                                <span style="margin-left: 5px">15</span>
+              </span>
+              <!-- <a href="#pablo">Get More Space...</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

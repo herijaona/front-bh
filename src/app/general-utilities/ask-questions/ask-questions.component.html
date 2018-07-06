@@ -1,0 +1,11 @@
+<div class="quest_">
+    <div class="">
+        <label>Your Questions :</label>
+        <ckeditor [(ngModel)]="questionText" [config]="g.getConfig('conf0_editor')" [readonly]="false" (change)="onChangeEditor($event)" (editorChange)="onEditorChange($event)" (ready)="onReady($event)" debounce="100">
+        </ckeditor>
+    </div>
+    <div class="mt-2">
+        <button (click)="sendQuestions()" [ngClass]="{ disabled : !changeStatus } " class="btn btn-md btn-info bg-sign"><i class="fa fa-send mr-3"></i>send </button>
+    </div>
+    <div><label class="mr-2">Length:</label> {{ charLength}} <span class="ml-2"> (max: 10000 )</span> </div>
+</div>

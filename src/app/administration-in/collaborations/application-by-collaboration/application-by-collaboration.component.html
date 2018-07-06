@@ -1,0 +1,70 @@
+<div class="col-container">
+  <div *ngIf="readyData" class="table-respo">
+    <!-- Hasn't Data -->
+    <div *ngIf="!hasData">
+      <p class="hasdata">
+        Hello,
+        <br> You did not received any applications to this collaboration proposals
+      </p>
+    </div>
+
+    <!--Table-->
+    <div *ngIf="hasData">
+      <div>
+        <div class="receivedBy">
+          <span class="title-propos">
+            Application for the Collaboration :
+          </span>
+          <span class="hasdata"> &nbsp; {{dataCollab.name}}
+          </span>
+        </div>
+      </div>
+      <!-- NgIf collabtype == collabinnov c-a-d Project -->
+      <ng-template [ngIf]="dataCollab.typeCollab == 'COLLABPROJINNOV'">
+        <table class="table appli-table table-striped">
+          <!--Table head-->
+          <thead class="head-color">
+            <tr class="text-bl">
+              <th>Date</th>
+              <th>Country</th>
+              <th>Organisation</th>
+              <th>Type</th>
+              <!-- <th>Firstname</th>
+                <th>Lastname</th> -->
+              <th>Application name</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <!--Table head-->
+          <!--Table body-->
+          <tbody>
+            <tr *ngFor="let item of allApplData">
+              <td>{{item.date}}</td>
+              <td>{{item.countryCD}}</td>
+              <td>{{item.usr.org}}</td>
+              <td>{{g.getCollabtypetext(item.prjt.type)}}</td>
+              <!-- <td>{{item.usr.firstname}}</td>
+            <td>{{item.usr.lastname}}</td> -->
+              <td>{{item.applicationName}}</td>
+              <td>{{item.status}}</td>
+              <td>
+                <a [routerLink]="['/administration-in','collaborations','application-received','details', item._id ]" target="_blank">
+                  <i class="fa fa-eye"></i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+          <!--Table body-->
+        </table>
+        <!--Table-->
+      </ng-template>
+      <!-- if collaboration investisment  -->
+      <ng-template></ng-template>
+      <!-- if collaboration incubation  -->
+      <ng-template></ng-template>
+      <!-- if collaboration Subject  -->
+      <ng-template></ng-template>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="col-container">
+  <p class="invite">You can invite other organizations to participate in your projects.</p>
+  <div *ngIf="showResult">
+    <div *ngIf="!hasError">
+      <span class="green invite-gr">Invitation(s) sent succesfully</span>
+    </div>
+
+    <div *ngIf="hasError">
+      <span class="invite-gr" *ngFor="let item of invitationResult" [ngClass]="{ red : item.res_value.value == 'NOK', green : item.res_value.value == 'OK'  }">{{item.objInv.invitation_email+' : '+ item.res_value.motif}}</span>
+      <br>
+    </div>
+  </div>
+  <div class="add-form text-right">
+    <span (click)="addNewRow()">
+      <i class="fa fa-plus"></i>
+    </span>
+  </div>
+  <form [formGroup]='inviteForm' (ngSubmit)="sendInvitation()">
+    <div formArrayName="inviteItem" class="">
+      <div class="row position-realtive" *ngFor="let itemrow of getcontrols(); let i=index" [formGroupName]="i">
+        <div class="col-3">
+          <label class="grey-text-form">First name</label>
+          <div class="input-md">
+            <input type="text" placeholder="" id="" formControlName="firstname" class="form-control-project" mdbActive validate required="required">
+          </div>
+        </div>
+        <div class="col-3">
+          <label class="grey-text-form">Last name</label>
+          <div class="input-md">
+            <input type="text" placeholder="" id="" formControlName="lastname" class="form-control-project" mdbActive validate required="required">
+          </div>
+        </div>
+        <div class="col-3">
+          <label class="grey-text-form">Organisation name</label>
+          <div class="input-md">
+            <input type="text" placeholder="" id="" formControlName="organisationName" class="form-control-project" mdbActive validate
+              required="required">
+          </div>
+        </div>
+        <div class="col-3">
+          <label class="grey-text-form">Email</label>
+          <div class="input-md">
+            <input type="text" placeholder="" id="" formControlName="invitation_email" class="form-control-project" mdbActive validate
+              required="required">
+          </div>
+        </div>
+        <a *ngIf="inviteForm.controls.inviteItem.length > 1" (click)="deleteRow(i)" class="i-remove">
+          <i class="fa fa-remove"></i>
+        </a>
+      </div>
+      <div class="row">
+        <div class="text-right">
+          <button [ngClass]="{disabled: !inviteForm.valid}" class="mb-4 btn-col btn">
+            <i class="fa fa-send pr-2"></i>to send</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

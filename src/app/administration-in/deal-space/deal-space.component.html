@@ -1,0 +1,232 @@
+<navbar-admin></navbar-admin>
+<div class="bg-deal">
+    <div class="container-fluid pl-0">
+        <div class="">
+            <div class="row">
+                <section class="col-team team-fr">
+                    <div>
+                        <h2>Applications</h2>
+                        <div class="selectdiv ">
+                            <label>
+                              <select>
+                                  <option selected>Organise par priorite</option>
+                                  <option>Option 1</option>
+                                  <option>Option 2</option>
+                                  <option>Last long option</option>
+                              </select>
+                          </label>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="media team-media">
+                            <i class="fa fa-circle-thin"></i>
+                            <div class="media-body pr">
+                                <h5 class="mt-0 mb-1">Predicsis</h5>
+                                <span>Jean Louis Fucellaro</span>
+                            </div>
+                            <div class="time-count">
+                                <span>2</span><br>
+                                <span>03/03/2018</span>
+                            </div>
+                        </div>
+                        <div class="media team-media">
+                            <i class="fa fa-square i-square"></i>
+                            <div class="media-body pr">
+                                <h5 class="mt-0 mb-1">Predicsis</h5>
+                                <span>Jean Louis Fucellaro</span>
+                            </div>
+                            <div class="time-count">
+                                <br>
+                                <span>03/03/2018</span>
+                            </div>
+                        </div>
+                        <div class="media team-media">
+                            <i class="fa fa-circle-thin i-triangle"></i>
+                            <div class="media-body pr">
+                                <h5 class="mt-0 mb-1">Predicsis</h5>
+                                <span>Jean Louis Fucellaro</span>
+                            </div>
+                            <div class="time-count">
+                                <span>1</span><br>
+                                <span>03/03/2018</span>
+                            </div>
+                        </div>
+                        <div class="media team-media">
+                            <i class="fa fa-circle-thin"></i>
+                            <div class="media-body pr">
+                                <h5 class="mt-0 mb-1">Predicsis</h5>
+                                <span>Jean Louis Fucellaro</span>
+                            </div>
+                            <div class="time-count">
+                                <span>7</span><br>
+                                <span>03/03/2018</span>
+                            </div>
+                        </div>
+                        <div class="media team-media">
+                            <i class="fa fa-square i-square"></i>
+                            <div class="media-body pr">
+                                <h5 class="mt-0 mb-1">Predicsis</h5>
+                                <span>Jean Louis Fucellaro</span>
+                            </div>
+                            <div class="time-count">
+                                <br>
+                                <span>03/03/2018</span>
+                            </div>
+                        </div>
+                        <div class="media team-media">
+                            <i class="fa fa-square i-square"></i>
+                            <div class="media-body pr">
+                                <h5 class="mt-0 mb-1">Predicsis</h5>
+                                <span>Jean Louis Fucellaro</span>
+                            </div>
+                            <div class="time-count">
+                                <br>
+                                <span>03/03/2018</span>
+                            </div>
+                        </div>
+                        <div class="media team-media">
+                            <i class="fa fa-circle-thin"></i>
+                            <div class="media-body pr">
+                                <h5 class="mt-0 mb-1">Predicsis</h5>
+                                <span>Jean Louis Fucellaro</span>
+                            </div>
+                            <div class="time-count">
+                                <span>4</span><br>
+                                <span>03/03/2018</span>
+                            </div>
+                        </div>
+                        <div class="media team-media">
+                            <i class="fa fa-square i-square"></i>
+                            <div class="media-body pr">
+                                <h5 class="mt-0 mb-1">Predicsis</h5>
+                                <span>Jean Louis Fucellaro</span>
+                            </div>
+                            <div class="time-count">
+                                <br>
+                                <span>03/03/2018</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="col-content content-eco-fr">
+                    <h2>Eco-friendly plastic packaging</h2>
+                    <nav class="navbar navbar-expand-sm nav-tel justify-content-center">
+                        <ul class="navbar-nav ns">
+                            <li class="nav-item">
+                                <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/administration-in','deal-space','application']">Application</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','deal-space','files']">Files</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','deal-space','question-answers']">Questions-Answers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','deal-space','planning']">Planning</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <main class="collaboration-container">
+                        <div class="ml-16">
+                            <router-outlet></router-outlet>
+                        </div>
+                    </main>
+                </section>
+                <section class="col-team observation">
+                    <div>
+                        <h2>Observations</h2>
+                        <h5>Today</h5>
+                        <div class="card card-ob">
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <h4 class="card-title danger">
+                                        <img [src]="img_avatar" class="rounded-circle img-fluid" alt="First sample avatar image" width="34px">
+                                    </h4>
+                                    <h4 class="">
+                                        <label class="custon-ch">
+                                            <input type="checkbox" id="asia" checked>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </h4>
+                                    <p class="card-text">love chocolate <span class="c-gr">@john</span> cake cake cheesecake. Chocolate cake pastry macaroon.</p>
+                                    <span class="footer-card">Completed by John Doe</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-ob">
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <h4 class="card-title danger">
+                                        <img [src]="img_avatar" class="rounded-circle img-fluid" alt="First sample avatar image" width="34px">
+                                    </h4>
+                                    <h4 class="">
+                                        <label class="custon-ch">
+                                            <input type="checkbox" id="asia">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </h4>
+                                    <p class="card-text">Chocolate <span class="c-gr">@john</span> cake macaroon.</p>
+                                    <span class="footer-card">Completed by John Doe</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-ob">
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <h4 class="card-title danger">
+                                        <img [src]="img_avatar" class="rounded-circle img-fluid" alt="First sample avatar image" width="34px">
+                                    </h4>
+                                    <h4 class="">
+                                        <label class="custon-ch">
+                                            <input type="checkbox" id="asia" checked>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </h4>
+                                    <p class="card-text">love chocolate <span class="c-rd">@john</span> cake cake cheesecake. Chocolate cake pastry macaroon.</p>
+                                    <span class="footer-card">Completed by John Doe</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-ob">
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <h4 class="card-title danger">
+                                        <img [src]="img_avatar" class="rounded-circle img-fluid" alt="First sample avatar image" width="34px">
+                                    </h4>
+                                    <h4 class="">
+                                        <label class="custon-ch">
+                                            <input type="checkbox" id="asia" checked>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </h4>
+                                    <p class="card-text">love chocolate cake cake cheesecake. Chocolate cake pastry macaroon.</p>
+                                    <p>
+                                        <span class="c-gr">@john</span>
+                                        <span class="c-gr">@john</span>
+                                        <span class="c-rd">@john</span></p>
+                                    <span class="footer-card">Completed by John Doe</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card card-ob">
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <h4 class="card-title danger">
+                                        <img [src]="img_avatar" class="rounded-circle img-fluid" alt="First sample avatar image" width="34px">
+                                    </h4>
+                                    <h4 class="">
+                                        <label class="custon-ch">
+                                            <input type="checkbox" id="asia">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </h4>
+                                    <p class="card-text">Chocolate cake macaroon <span class="c-rd">@john</span></p>
+                                    <span class="footer-card">Completed by John Doe</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

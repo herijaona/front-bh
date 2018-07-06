@@ -1,0 +1,127 @@
+<ng-template [ngIf]='presentIn'>
+  <!-- Select Zone type on Add -->
+  <div *ngIf="actionAdd" class="form-group">
+    <select class="form-control sl_newZone" (change)='zoneSelectChange($event)' [(ngModel)]="selectedZone">
+      <option value="default">Select the type</option>
+      <option value="imAdd">Image</option>
+      <option value="vidAdd">Video</option>
+      <option *ngIf="!inArray(3 , existDtype )" value="chiffrAdd">Chiffres</option>
+      <!-- <option  *ngIf="!inArray(4, existDtype )" value="tweetAdd">Tweet</option>
+    <option *ngIf="!inArray(5 , existDtype )" value="fbAdd">Facebook</option>
+    <option *ngIf="!inArray(6 , existDtype )" value="txtAdd">Text Quote</option>
+    <option *ngIf="!inArray(7 , existDtype )" value="mapAdrAdd">Map</option> -->
+    </select>
+  </div>
+  <!-- end select add type zone  -->
+  <!-- Select Zone type on edit -->
+  <div *ngIf="!actionAdd" class="form-group">
+    <select class="form-control set-select" (change)='zoneSelectChange($event)' [(ngModel)]="selectedZone">
+      <option value="default">Select the type</option>
+      <option *ngIf="inArray(1 , AllowedZone )" value="imAdd">Image</option>
+      <option *ngIf="inArray(2 , AllowedZone )" value="vidAdd">Video</option>
+      <option *ngIf="inArray(3 , AllowedZone )" value="chiffrAdd">Chiffres</option>
+      <!-- <option  *ngIf="inArray(4, AllowedZone )" value="tweetAdd">Tweet</option>
+    <option *ngIf="inArray(5 , AllowedZone )" value="fbAdd">Facebook</option>
+    <option *ngIf="inArray(6 , AllowedZone )" value="txtAdd">Text Quote</option>
+    <option *ngIf="inArray(7 , AllowedZone )" value="mapAdrAdd">Map</option> -->
+    </select>
+  </div>
+  <!-- end select edit type -->
+  <div *ngIf="selctFlag.imAdd && actionAdd" class="imAdd">
+    <div class="row">
+      <div class="col-md-5 pl-0">
+        <form [formGroup]="imForm" (ngSubmit)="saveImageZone()">
+          <div class="">
+            <label>Caption :</label>
+            <input formControlName="imCaption" type="text" name="" class="input-story">
+          </div>
+          <button type="submit" [ngClass]="{disabled : !imForm.valid || imNotSelected }" class="btn btn-default"> Save </button>
+        </form>
+      </div>
+      <div class="col-md-7">
+        <im-select [entity]="cpy_entity" [im_to]="newDestFile"></im-select>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="selctFlag.imAdd && !actionAdd" class="imAdd">
+    <div class="row">
+      <div class="col-md-5 pl-0">
+        <form [formGroup]="imForm" (ngSubmit)="saveImageZone()">
+          <div class="">
+            <label>Caption :</label>
+            <input formControlName="imCaption" type="text" name="" class="input-story">
+          </div>
+          <div *ngIf="data_zone.dtype==1" class="">
+            <img class="im_edit" [src]="selectedImage" alt="">
+          </div>
+          <button type="submit" [ngClass]="{disabled : !imForm.valid || imNotSelected }" class="btn btn-default"> Save </button>
+        </form>
+      </div>
+      <div class="col-md-7">
+        <im-select [entity]="cpy_entity" [im_to]="newDestFile"></im-select>
+      </div>
+    </div>
+  </div>
+  <!-- Videos Add and edit -->
+  <div *ngIf="selctFlag.vidAdd" class="vidAdd">
+    <div class="row">
+      <div class="col-md-5 pl-0">
+        <form [formGroup]="vidForm" (ngSubmit)="saveVideosZone()">
+          <div class="caption-save">
+            <label>Caption :</label>
+            <input formControlName="vidCaption" type="text" name="" class="input-story">
+          </div>
+          <div class="caption-save">
+            <label>Youtube Url :</label>
+            <input class="input-story" (change)="urlSetted($event)" (blur)="urlSetted($event)" (keyup)="urlSetted($event)" formControlName="vidYoutubeUrl"
+              type="url" name="">
+          </div>
+          <div class="">
+            <button type="submit" class="btn btn-default" [ngClass]="{disabled : !vidForm.valid }">Save</button>
+          </div>
+        </form>
+      </div>
+      <div class=" col-md-7 ">
+        <div *ngIf="im_poster" class="">
+          <div class=" ">
+            <img width="100%" [src]="im_poster" alt=" ">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Chiffres number add  and edit  -->
+  <div *ngIf="selctFlag.chiffrAdd" class="chiffrAdd ">
+    <form [formGroup]="chrForm" (ngSubmit)="saveChiffresZone()">
+      <div class="row">
+        <div class="col-md-6 ">
+          <div class="">
+            <label for="c_year">Creation date :</label>
+            <input formControlName="createdYear" class="" type="number" id="c_year">
+          </div>
+          <div class="">
+            <label for="colab">Workforce :</label>
+            <input id="colab" class="" formControlName="workforce" type="number">
+          </div>
+          <div class="">
+            <label>Proposed collaborations :</label>
+            <input formControlName="proopsed_collaborations" type="number">
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class=" ">
+            <label>Collaborations realized :</label>
+            <input formControlName="realized_collaborations" type="number">
+          </div>
+          <div class=" ">
+            <label>Members engaged in innovation :</label>
+            <input formControlName="members_engaged" type="number">
+          </div>
+        </div>
+      </div>
+      <div class="">
+        <button [ngClass]="{disabled: !chrForm.valid }" class="btn btn-default"> Save </button>
+      </div>
+    </form>
+  </div>
+</ng-template>

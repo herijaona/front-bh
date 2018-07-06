@@ -1,0 +1,77 @@
+.appli-table {
+    td a {
+        color: #0275d8;
+    }
+    td a:hover {
+        border-bottom: 1px solid #0275d8;
+    }
+    .head-color{
+        tr{
+            box-shadow: 0px 0px 2px 0px;
+        }
+        .text-bl{
+            th{
+                /* width: 17%; */
+            }
+        }
+    }
+    tbody{
+        td{
+            border: none !important;
+        }
+        tr:hover{
+            background: #ff00001a !important;
+            cursor:pointer;
+        }
+    }
+    tbody tr:nth-of-type(odd) {
+        background-color: rgba(160, 160, 160, 0.05);
+    }
+    .cn{
+        width: 18%;
+        padding-left: 0px !important;
+        .fa-angle-down{
+            text-align: center;
+            font-size: 15px;
+            color: #f73547;
+            font-weight: bold;
+            position: relative;
+            top: -4px;
+        }
+        .fa-search{
+            padding-left: 1rem !important;
+            color: #393f4b;
+        }
+        div:first-child{
+            width: 194px;
+            background: #ff00001a;
+            top: 12px;
+            position: relative;
+            height: 47px;
+            text-align: center;
+            padding-top: 13px;
+            border-bottom: 2px solid #f73547;
+        }
+    }
+}
+.btn-tab1{
+    background: #f73547;
+    padding: 7px 13px 7px 13px;
+    color: white !important;
+    font-weight: 700;
+    font-size: 13.5px;
+}
+.btn-tab2{
+    background: #ff00000a;
+    padding: 7px 13px 7px 13px;
+    color: #f73547 !important;
+    font-weight: 700;
+    font-size: 13.5px;
+}
+.btn-tab3{
+    background: #ff00000a;
+    padding: 7px 13px 7px 13px;
+    color: #f73547 !important;
+    font-weight: 700;
+    font-size: 13.5px;
+}

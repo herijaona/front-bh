@@ -1,0 +1,98 @@
+<page-header [pageCurrent]="projet_page"></page-header>
+<div class="container-fluid grid grid-top">
+
+  <ng-template [ngIf]="collabTypedescr == 'COLLABPROJINNOV'">
+    <div *ngIf="hasData" class="project-list ">
+      <div class="navbar-expand-lg">
+        <div>
+          <ul class="list-nav">
+            <li>
+              <h3>
+                <i class="fa fa-square"></i>
+                <span>{{detailsData.name}}</span>
+              </h3>
+            </li>
+            <li>
+              <ul class="navbar-nav nav-down">
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <i class="fa fa-calendar"></i>
+                    <span>{{detailsData.account.enseigneCommerciale}}</span>
+                  </a>
+                </li> -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <i class="fa fa-map-marker"></i>
+                    <span>{{detailsData.account.adresse[0]}}</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <i class="fa fa-clock-o"></i>
+                    <span *ngIf="detailsData.dataDetails.collabDurationType === 'programmed'">Programmed</span>
+                    <span *ngIf="detailsData.dataDetails.collabDurationType === 'continue'">Permanent</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <i class="fa fa-key"></i>
+                    <span *ngIf="detailsData.dataDetails.hasInfoConfidential === 'no'">No NDA</span>
+                    <span *ngIf="detailsData.dataDetails.hasInfoConfidential === 'yes'">NDA</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="title-propos">PROJECT CONTEXT</h4>
+          <p [innerHtml]="detailsData.dataDetails.collabDescribData.contexte | bhSafeHtml"></p>
+          <h4 class="title-propos">PROJECT OBJECTIVES</h4>
+          <p [innerHtml]="detailsData.dataDetails.collabDescribData.objectif | bhSafeHtml"></p>
+          <h4 class="title-propos">PROPOSAL REQUIREMENTS</h4>
+          <p [innerHtml]="detailsData.dataDetails.collabDescribData.elementProposition | bhSafeHtml"></p>
+          <h4 class="title-propos">DECISION PROCESS</h4>
+          <p [innerHtml]="detailsData.dataDetails.collabDescribData.processDecision | bhSafeHtml"></p>
+          <div class="specialField">
+            <div class="flx">
+              <h4 class="title-propos">PROJECT TYPE :</h4>&nbsp;
+              <span class="text-capitalize">{{detailsData.dataDetails.collabDurationType}}</span>
+            </div>
+            <div class="row" *ngIf="detailsData.dataDetails.collabDurationType == 'programmed'">
+              <div *ngIf="detailsData.dataDetails.collabDurationData.limitdate" class="mr-4  programmed">
+                <p>Deadline for receipt of applications</p>
+                <h6>{{getDateString(detailsData.dataDetails.collabDurationData.limitdate.jsdate)}}</h6>
+              </div>
+              <div *ngIf="detailsData.dataDetails.collabDurationData.applicationselecteddate" class="mr-4 programmed">
+                <p>Date of the selected appications</p>
+                <h6>{{getDateString(detailsData.dataDetails.collabDurationData.applicationselecteddate.jsdate)}}</h6>
+              </div>
+              <div *ngIf="detailsData.dataDetails.collabDurationData.discussdate" class="mr-4  programmed">
+                <p>Planned date of discussion</p>
+                <h6>{{getDateString(detailsData.dataDetails.collabDurationData.discussdate.jsdate)}}</h6>
+              </div>
+            </div>
+            <div class="flx mt-2">
+              <h4 class="title-propos">CONFIDENTIAL PART : </h4>
+              <span class="text-capitalize ml-1"> {{detailsData.dataDetails.hasInfoConfidential}}</span>
+
+            </div>
+          </div>
+          <p class="text-right ask-app">
+            <a (click)="ask_questions_aboutProject($event)" class="btn btn-primary btn-lg btn-question" href="#" role="button">
+              <span>Question</span>
+              <i class="fa fa-question-circle"></i>
+            </a>
+            <a (click)="applyto($event)" class="btn btn-primary btn-lg btn-apply" href="#" role="button">
+              <span>Apply</span>
+              <i class="fa fa-check"></i>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+<div class="">
+  <pmodal-show></pmodal-show>
+</div>

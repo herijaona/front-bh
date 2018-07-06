@@ -1,0 +1,33 @@
+<section class="request-information">
+    <img src="{{g.base_href}}assets/img/bgfooter.jpg" class="bg">
+    <div class="grid-project ">
+        <div class="row">
+            <div class="col-sm-12  col-lg-5 mt-75">
+                <img src="{{g.base_href}}assets/img/logofooter.png">
+                <h3 class="open">Plateforme d'open innovation</h3>
+                <div class="footerlegal">
+                    <p>Copyright 2017 Collaboration Capital  -  
+                    <a href="">Mentions Légales</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-7">
+                <h3 class="request-h3">Demande de Renseignements</h3>
+                <div class="row" [formGroup]="myGroup">
+                    <div class="col-sm-12 col-xs-12 col-lg-6 pm-0">
+                        <input type="email" placeholder="Nom" formControlName="bhemail" id="bhemail" class="form-control" mdbActive validate required="required">
+                        <input type="email" placeholder="Prenom" formControlName="bhemail" id="bhemail" class="form-control" mdbActive validate required="required">
+                        <input type="email" placeholder="Adresse e-mail*" formControlName="bhemail" id="bhemail" class="form-control" mdbActive validate required="required">
+                        <input type="email" placeholder="Numero de telephone" formControlName="bhemail" id="bhemail" class="form-control" mdbActive validate required="required">
+                    </div>
+                    <div class="col-sm-12 col-xs-12 col-lg-6 p-0">
+                        <div class="form-group">
+                            <textarea placeholder="Votre message*" class="form-control rounded-0 textarea-info" id="exampleFormControlTextarea1" rows="10"></textarea>
+                            <button  type="submit" class="btn btn-success btn-block btn-rounded z-depth-1 bg-form btn-footer">Envoyer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,53 @@
+<!-- TOAst custom  -->
+<div *ngIf="toast" class="notifToast">
+    <div class="in_toast">
+        <p [innerHtml]='mess_notif' class="animated fadeInDown"></p>
+    </div>
+</div>
+
+<ng-template [ngIf]='!isIn'>
+    <!-- NavBar  -->
+    <div id="app" class="container-fluid bg-nav-color">
+        <nav class="navbar navbar-expand-lg navbar-light bg-faded nav-load">
+            <div id="" class="navbar-read">
+                <ul class="navbar-nav mr-auto nav-logo">
+                    <li class="nav-item">
+                        <span class="img-logo"><a  routerLink="/"><img src="{{g.base_href}}assets/img/logo-ccw.png" width=""></a></span>
+                    </li>
+                </ul>
+                <ul class="navbar-nav nav-top">
+                    <!-- <li class="nav-item i8">
+          <span class=""><img src="{{g.base_href}}assets/img/fb-8.png" width="6"></span>
+        </li>
+        <li class="i8">
+          <span class="ligne-vertical">|</span>
+        </li>
+        <li class="nav-item i8">
+          <span class="tw-8"><img src="{{g.base_href}}assets/img/tw-8.png" width="13"></span>
+        </li>
+        <li class="i8">
+          <span class="ligne-vertical">|</span>
+        </li>
+        <li class="nav-item i8">
+          <span><img src="{{g.base_href}}assets/img/in-8.png" width="13"></span>
+        </li> -->
+                    <li class="nav-item">
+                        <li *ngIf="!auth.isLoggedIn()"><a routerLink="/login" class="nav-link  color-white recrute-text">Connexion</a>
+                        </li>
+                        <!-- <li *ngIf="auth.isLoggedIn() && !isAdmin" class="nav-item">
+            <a class="nav-link  color-white  recrute-text2" routerLink="/profile">Profile</a>
+          </li> -->
+                        <li *ngIf="auth.isLoggedIn()" class="nav-item">
+                            <a class="nav-link color-white   recrute-text2" aria-expanded="false" data-toggle="dropdown" aria-haspopup="true" id="navbarDropdownMenuLink" routerLink="/administration-in/desk"><span class="d-none-admin">Administration</span><span class="d-none-ad">Admin</span></a>
+                            <!--  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a *ngFor="let acc of accAdm" [routerLink]="['/company',acc.name, 'profile', acc._id]" class="dropdown-item" href="#">{{acc.name}}</a>
+            </div> -->
+                        </li>
+                        <li *ngIf="auth.isLoggedIn() " class="nav-item">
+                            <a class="nav-link  color-white recrute-text" (click)="auth.logout()"><i class="fa fa-power-off"></i><span class="logout">Logout</span></a>
+                        </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</ng-template>

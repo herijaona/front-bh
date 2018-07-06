@@ -1,0 +1,67 @@
+<div *ngIf="editPAGEstatus" class="oneZonebut">
+  <a (click)="editZone()" class="erew">
+    <i class="fa fa-pencil" aria-hidden="true"></i>
+  </a>
+  <a *ngIf="canDeleted" (click)='deleteZone()' class="erew2">
+    <i class="fa fa-trash" aria-hidden="true"></i>
+  </a>
+</div>
+
+<ng-template [ngIf]="dtZone">
+
+  <!-- Image -->
+  <ng-template [ngIf]="dtZone.dtype == 1">
+    <div class="oz im">
+      <img class="img-responsive" [src]="dtZone.image.url" width="100%">
+      <div class="overlay_" mdbWavesEffect (click)="ShowZoom()">
+        <i class="fa fa-search chck"></i>
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- Video  -->
+  <ng-template [ngIf]="dtZone.dtype == 2">
+    <div class="oz im">
+      <div class="video_zone">
+        <img width="100%" [src]="getPoster()" alt="" class="vd">
+        <span class="captin">
+          <i class="fa fa-play"></i>
+          <span class="zone-caption">{{dtZone.caption}}</span>
+        </span>
+        <div (click)="ShowZoom()" mdbWavesEffect class="overlay_">
+          <i class="fa fa-play chck"></i>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- chiffres  -->
+  <ng-template [ngIf]="dtZone.dtype == 3">
+    <div class="oz">
+      <div class="stats-container">
+        <div class="stat-item">
+          <span class="stat-label">Creation date</span>
+          <span [innerHtml]="dtZone.data_suppl.createdYear " class="stat-value">1900</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Workforce</span>
+          <span [innerHtml]="dtZone.data_suppl.workforce" class="stat-value">0</span>
+        </div>
+        <div class="stat-item wide">
+          <span class="stat-label">Proposed collaborations</span>
+          <span [innerHtml]="dtZone.data_suppl.proopsed_collaborations" class="stat-value">
+            0
+          </span>
+        </div>
+        <div class="stat-item wide">
+          <span class="stat-label">Collaborations realized</span>
+          <span [innerHtml]="dtZone.data_suppl.realized_collaborations" class="stat-value">0</span>
+        </div>
+        <div class="stat-item wide">
+          <span class="stat-label">Members engaged in innovation</span>
+          <span [innerHtml]="dtZone.data_suppl.members_engaged" class="stat-value">0</span>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</ng-template>

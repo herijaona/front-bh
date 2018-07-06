@@ -1,0 +1,110 @@
+.bg-col {
+    background: #393f4b !important;
+    margin-top: -2px;
+    h1 {
+        color: white;
+        font-size: 24px;
+        font-family: SourceSansPro-Bold;
+        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+}
+
+nav {
+    display: none;
+}
+
+.header-text {
+    p {
+        color: #373d49;
+        font-size: 13.5px;
+        font-family: SourceSansPro-Semibold;
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 11px;
+        font-style: italic;
+        text-align: left;
+    }
+    hr {
+        border: 0.8px solid #da544512;
+        margin-bottom: 62px;
+    }
+}
+
+.proposal {
+    h2 {
+        color: #393f4b;
+        font-family: SourceSansPro-Bold;
+        font-size: 15.5px;
+        text-transform: uppercase;
+        margin-top: 32px;
+    }
+    .grey-text-form {
+        text-transform: uppercase;
+        font-size: 13.5px;
+        font-family: SourceSansPro-Semibold;
+        color: #606060;
+        letter-spacing: 0.3px;
+        margin-bottom: 2px;
+    }
+    .grey-text-form-proposal {
+        color: #e94e45;
+        font-size: 12.5px;
+    }
+}
+
+.form-control-project {
+    box-sizing: inherit;
+    width: 100%;
+    height: 37px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #e6e9ec;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    padding-left: 14px;
+    margin-bottom: 15px;
+}
+
+.form-control-project-textarea {
+    height: 150px;
+}
+
+.btn-col {
+    background: #71BF71;
+    color: white;
+    padding: 8px;
+    padding-right: 30px;
+    padding-left: 30px;
+    text-transform: capitalize;
+    box-shadow: none;
+    i {
+        font-size: 12px;
+    }
+}
+
+.select-act-type {
+    height: 38px !important;
+    padding-left: 14px;
+    font-size: 14px;
+    color: #495057;
+    width: 100%;
+}
+
+.position-realtive {
+    i {
+        position: absolute;
+        right: 12px;
+        width: 24px;
+        height: 24px;
+        color: white;
+        background: #71BF71;
+        border-radius: 14px;
+        padding: 4px;
+        top: 7px;
+    }
+}

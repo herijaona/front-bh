@@ -1,0 +1,36 @@
+.im_edit {
+	width: 100%
+}
+
+.sl_newZone {
+	height: 100% !important;
+	background: white;
+    height: 33px;
+    min-width: 110px;
+    border: 1px solid #e6e9ec;
+    height: 41px;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+}
+.imAdd{
+	span,.row div label{
+		text-transform: uppercase;
+	    font-size: 14px;
+	    font-family: SourceSansPro-Regular;
+	    color: #606060;
+	    letter-spacing: 0.3px;
+
+	}
+}
+.currence-select{
+	height: 37px !important;
+    left: 19px;
+    position: relative;
+}
+.caption-save{
+	label{
+		font-family: SourceSansPro-Semibold;
+		color: #6b6767 !important;
+	}
+}

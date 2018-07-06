@@ -1,0 +1,147 @@
+<navbar-admin></navbar-admin>
+<div *ngIf="!showInfo" class="col-container grid-top">
+    <h5 class="profile-h5">your profile</h5>
+    <div class="row">
+        <div class="col-lg-12 pl-0 pr-0 pt-4">
+            <div class="row bs-10">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <p-info [details_]="details"></p-info>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <p-completion></p-completion>
+                </div>
+            </div>
+            <hr>
+            <!-- Personal Info data -->
+            <form id="editForm_" class="" [formGroup]="EditForm" (ngSubmit)="EditProfile()">
+                <div class="title-edit">
+                    <h4>Personnal information</h4>
+                    <span>
+            <button *ngIf="!editPInfo" (click)='activeInfoEdit()' type="button" class="btn btn-block ed">
+            <i class="fa fa-pencil"></i>
+            <span class="edit-person"></span>
+                    </button>
+                    <button *ngIf="editPInfo" [ngClass]="{'disabled': !EditForm.valid}" type="submit" class="btn btn-unique-edit ed-3 btn-ed3">
+            <i class="fa fa-save"></i>
+            <span class="edit-person"></span>
+            </button>
+                    </span>
+                </div>
+                <div class="flex" style="width: 100%">
+                    <span class="mg-left">
+            <label for="defaultFormRegisterNameEx" class="grey-text-form">First Name</label>
+            <input [attr.readonly]="!editPInfo ? true : null" type="text" formControlName="bh_firstname" id="bh_firstname" class="form-control col-xs-12">
+            </span>
+                    <span class="mg-left-wt">
+            <label for="defaultFormRegisterNameEx" class="grey-text-form">Last Name</label>
+            <input [attr.readonly]="!editPInfo ? true : null" formControlName="bh_lastname" id="bh_lastname" type="text" class="form-control col-xs-12">
+            </span>
+                </div>
+                <div class="flex" style="width: 100%">
+                    <span class="mg-left">
+            <label for="defaultFormRegisterNameEx" [attr.readonly]="!editPInfo ? true : null" class="grey-text-form">email</label>
+            <input [attr.readonly]="!editPInfo ? true : null" type="email" formControlName="bh_email" class="form-control">
+            </span>
+                    <span class="mg-left-wt">
+            <label for="defaultFormRegisterNameEx" class="grey-text-form">Job</label>
+            <input [attr.readonly]="!editPInfo ? true : null" type="text" formControlName="bh_functions" id="bh_functions" class="form-control"
+               />
+            </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="bg-conex">
+    <div class="col-container grid-top">
+        <div class="row">
+            <div class="col-lg-12 pl-0 pr-0 pt-4">
+                <!-- PassWord Data -->
+                <form id="editPassword_" class="" [formGroup]="editPassword" (ngSubmit)="EditPassword()">
+                    <div class="title-edit">
+                        <h4>Connexion</h4>
+                        <span class="up-span">
+               <button [ngClass]="{'disabled ed':!editPassword.valid || editPassword.value.bh_passConf != editPassword.value.bh_pass, 'btnpass ed-3 btn-ed3': vlp(editPassword.valid , editPassword.value.bh_passConf == editPassword.value.bh_pass) }" class="btn m-0 ed-3 btn-red-up"
+                  type="submit">
+               <i class="fa fa-save"></i>
+               <span class="edit-person"></span>
+                        </button>
+                        </span>
+                    </div>
+                    <div class="flex" style="width: 100%">
+                        <span class="mg-left">
+               <label for="defaultFormRegisterNameEx" class="grey-text-form">Password</label>
+               <input type="password" formControlName="bh_pass" id="bh_pass" class="form-control">
+               </span>
+                        <span class="mg-left-wt">
+               <label for="defaultFormRegisterNameEx" class="grey-text-form">Confirm Password</label>
+               <input type="password" formControlName="bh_passConf" id="bh_passConf" class="form-control">
+               </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-container">
+    <div class="row">
+        <div class="col-lg-12 pl-0 pr-0 pt-4">
+            <!--   company Data  -->
+            <form *ngIf="isAdmin" class="swe" id="ewd" [formGroup]="uform" (ngSubmit)="onUpdateFormSubmit()">
+                <div class="title-edit">
+                    <h4>Organizational Information</h4>
+                    <span *ngIf="!editCompInfo">
+            <button (click)="activeCmpInfoEdit()" type="button" class="btn ed">
+            <i class="fa fa-pencil"></i>
+            <span class="edit-person"></span>
+                    </button>
+                    </span>
+                    <span *ngIf="editCompInfo">
+            <button type="submit" class="btn ed-3 btn-ed3">
+            <i class="fa fa-save"></i>
+            <span class="edit-person"></span>
+                    </button>
+                    </span>
+                </div>
+                <div class="flex" style="width: 100%">
+                    <span class="mg-left">
+            <label for="defaultFormRegisterNameEx" class="grey-text-form">company name</label>
+            <input [attr.readonly]="!editCompInfo? true : null" type="text" formControlName="_acc_commercial" class="form-control" placeholder="Enter your company name">
+            </span>
+                    <span class="mg-left-wt">
+               <label for="bh_orgType" class="grey-text-form">activity type</label>
+               <select [attr.readonly]="!editCompInfo? true : null" formControlName="_acc_activityArea" class="form-control" id="bh_orgType"
+                  class="form-control-slct" mdbActive>
+                  <option value='0'>Choose type</option>
+                  <option value="startup">Startup</option>
+                  <option value="searcher">Searcher</option>
+                  <option value="established_company">Established company</option>
+                  <option value="research_laboratory">Research Laboratory</option>
+                  <option value="incubator">Incubator</option>
+               </select>
+            </span>
+                </div>
+                <br>
+                <div class="flex" style="width: 100%">
+                    <span class="mg-left">
+               <label for="_orgType" class="grey-text-form">type</label>
+               <select type="text" formControlName="_orgType" id="_orgType" class="form-control-slct">
+                  <option value='0'>Choose type</option>
+                  <option *ngFor="let item of orgType" value='{{ item._id }}'>{{item.text}}</option>
+               </select>
+            </span>
+                    <span class="mg-left-wt">
+            <label class="grey-text-form">location</label>
+            <ng4geo-autocomplete [userSettings]="userSettings" (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>
+            </span>
+                </div>
+                <div class="flex" style="width: 100%">
+                    <span class="mg-left">
+            <label for="defaultFormRegisterNameEx" class="grey-text-form">website</label>
+            <input [attr.readonly]="!editCompInfo? true : null" formControlName="_acc_websitLink" type="url" class="form-control" placeholder="Your website link: http(s)://www. ....">
+            </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

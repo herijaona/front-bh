@@ -1,0 +1,19 @@
+<page-header [pageCurrent]="projet_page"></page-header>
+<div class="portailpage-data">
+    <edit-page-button class="ultimeeditActiveButton"></edit-page-button>
+    <div class="grid">
+        <!-- <div *ngIf="editPAGEstatus" class="create-new">
+            <button (click)="createNewPr()" class="btn btn-unique-edit ed-2">{{btnButtontext}}</button>
+        </div> -->
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 top-team anim">
+                <div *ngIf="!projectPageEditStatus" class="">
+                    <project-list></project-list>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <presentation-side></presentation-side>
+            </div>
+        </div>
+    </div>
+</div>

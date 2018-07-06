@@ -1,0 +1,56 @@
+<div *ngFor="let item of listData; trackBy: trackByFn" class="projects-list position-realtive">
+  <div class="navbar-expand-lg">
+    <div>
+      <ul class="list-nav list-ul">
+        <li class="titl-text">
+          <a class="re" [routerLink]="[ '/open-innovation' , currentCompanySlug , 'details-project' , item._id ]">
+            <h3>
+              <i class="fa fa-square"></i>
+              <span>
+                <span class="mr-2">{{item.name}}</span> -
+                <span class="type-coll"> {{g.getCollabtypetext(item.typeCollab)}}</span>
+              </span>
+            </h3>
+          </a>
+        </li>
+        <div *ngIf="editPAGEstatus" class="bnt-pr">
+          <!-- <button class="btn btn-sm grey darken-3" (click)="editProject(item)">edit</button>
+          <button class="btn btn-sm red darken-4" (click)="deleteProject(item)">delete</button> -->
+          <!-- <div class="itw">
+            <a (click)="editProject(item)"><i class="fa fa-pencil fa-pen"></i></a>
+          </div> -->
+          <div class="itw">
+            <a (click)="deleteProject(item)">
+              <i class="fa fa-trash fa-del"></i>
+            </a>
+          </div>
+        </div>
+        <li class="resume-text">
+          <ul class="navbar-nav nav-down">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="[ '/open-innovation' , currentCompanySlug , 'details-project' , item._id ]">
+                <i class="fa fa-map-marker"></i>
+                <span>{{item.accCountry}}</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="[ '/open-innovation' , currentCompanySlug , 'details-project' , item._id ]">
+                <i class="fa fa-globe"></i>
+                <span>{{item.diffusionCountry}}</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="[ '/open-innovation' , currentCompanySlug , 'details-project' , item._id ]">
+                <i class="fa fa-clock-o"></i>
+                <span *ngIf="item.durationType == 'programmed'">Programmed</span>
+                <span *ngIf="item.durationType == 'continue'">Permanent</span>
+              </a>
+            </li>
+          </ul>
+          <p [innerHtml]="item.contexte|bhSafeHtml">
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

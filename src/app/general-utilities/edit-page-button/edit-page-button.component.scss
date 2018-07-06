@@ -1,0 +1,30 @@
+.adminEdit {
+    margin-top: 10px;
+    margin-bottom: 12px;
+    right: 10px;
+    z-index: 9;
+    width: 130px;
+    padding: 7.5px !important;
+}
+
+.btntext {
+    @media(max-width: 450px) {
+        display: none;
+        transition: 1s ease
+    }
+}
+
+.btn-add {
+    background: #4abde8 !important;
+    padding: 0.375rem 0.75rem !important;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    right: 137px;
+    z-index: 9;
+    position: absolute;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    width: 130px;
+    i {
+        padding-right: 11px;
+    }
+}

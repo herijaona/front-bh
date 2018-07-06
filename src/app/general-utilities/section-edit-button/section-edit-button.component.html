@@ -1,0 +1,6 @@
+<div class="bt_edit">
+    <button (click)="editSectionAct($event)" *ngIf="editAction" class="btn cs_btn edt tp"><i class="fa fa-pencil" aria-hidden="true"></i>
+        <span class="tooltip-top">min : 1000px X 140px</span>
+    </button>
+    <button (click)="saveSectionAct($event)" placement="right" ngbTooltip="Tooltip on right" *ngIf="!editAction" class="btn cs_btn sve"><i class="fa fa-save" aria-hidden="true"></i></button>
+</div>

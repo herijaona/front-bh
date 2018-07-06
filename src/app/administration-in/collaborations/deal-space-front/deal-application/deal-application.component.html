@@ -1,0 +1,61 @@
+<div class="deal-app-container">
+  <div class="deal-app-head">
+    <h2>THE CANDIDATE</h2>
+    <table>
+      <tr>
+        <td>
+          <img width="13px" height="13px" src="{{g.base_href }}assets/deal-icon/ico1.png">
+          <h4>Organisation name</h4>
+          <p class="m1">
+            <span>{{data_.cdAccount.enseigneCommerciale}}</span>
+          </p>
+        </td>
+        <td>
+          <img width="10px" height="12px" src="{{g.base_href }}assets/deal-icon/ico2.png">
+          <h4>Country</h4>
+          <p class="m2">
+            <span>{{getAdrrCountry(data_.cdAccount.adresse)}}</span>
+          </p>
+        </td>
+        <td>
+          <img width="11px" height="11px" src="{{g.base_href }}assets/deal-icon/ico3.png">
+          <h4>First name</h4>
+          <p class="m2">
+            <span>{{data_.candidat.firstname}}</span>
+          </p>
+        </td>
+        <td>
+          <img width="11px" height="11px" src="">
+          <h4>Last name</h4>
+          <p class="m2">
+            <span>{{data_.candidat.lastname}}</span>
+          </p>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="deal-dd">
+    <h3>COLLABORATION TYPE</h3>
+    <p>{{g.getCollabtypetext(data_.projet.typeCollab)}}</p>
+  </div>
+  <div class="deal-dd">
+    <h3>Application name</h3>
+    <p>{{data_.applDetail.applicationName}}</p>
+  </div>
+  <div class="deal-dd">
+    <h3>Main area of activity</h3>
+    <div [innerHtml]="data_.applDetail.main_activity_domain|bhSafeHtml"></div>
+  </div>
+  <div class="deal-dd">
+    <h3>Related activity</h3>
+    <div [innerHtml]="data_.applDetail.secondary_activity_domain|bhSafeHtml"></div>
+  </div>
+  <div class="deal-dd">
+    <h3>Skills and specificities</h3>
+    <div [innerHtml]="data_.applDetail.skill_specificities|bhSafeHtml"></div>
+  </div>
+  <div class="deal-dd">
+    <h3>the collaboration proposal</h3>
+    <div [innerHtml]="data_.applDetail.collab_proposal_describ|bhSafeHtml"></div>
+  </div>
+</div>

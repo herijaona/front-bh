@@ -1,0 +1,232 @@
+.oneZonebut {
+  position: absolute;
+  float: right;
+  z-index: 1040;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.erew {
+  i{
+    color: #0077B5;
+    font-size: 20px;
+    background: #ffffff9e;
+    border-radius: 45px;
+    padding: 5px 6px 5px 6px;
+  }
+}
+
+.erew2 i{
+    color: #d61200;
+    font-size: 20px;
+    background: #ffffff9e;
+    border-radius: 45px;
+    padding: 5px 6px 5px 6px;
+}
+
+.captin {
+    position: absolute;
+    bottom: 0px;
+    background-color: rgba(1, 2, 3, 0);
+    color: white;
+    width: 100%;
+    padding: 18px;
+    left: 0px;
+    text-transform: capitalize;
+    font-weight: bold;
+    padding-left: 20px;
+    z-index: 1000;
+  i{
+      color: white;
+      background: #e64a3b;
+      font-size: 14px;
+      border-radius: 30px;
+      padding: 8px 8.2px 7.5px 10px;
+  }
+}
+
+.overlay_ {
+  position: absolute;
+  top: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  height: 100%;
+  z-index: 1030
+}
+
+.chck {
+  position: relative;
+  top: 43%;
+  left: 1%;
+  font-size: 25px;
+}
+.im:hover{
+  overflow: hidden;
+}
+.im:hover img{
+  transform: scale(1.05);
+  transition: 1s ease-in;
+}
+.im:hover .overlay_ {
+  opacity: 1;
+  cursor: pointer
+}
+.im:hover span i{
+  box-shadow: 0 0 0 9px rgba(142, 142, 142, 0.3);
+  transition: 0.3s ease-in;
+      }
+
+.im:hover .overlay_ .chck {
+  transform: translateY(5px);
+  transition: 1s ease-in;
+}
+.im:hover .video_zone .overlay_ .chck {
+  transform: translateY(0px) !important;
+  transition: 0s ease-in !important;
+}
+.zone-caption{
+  padding-left: 5px;
+}
+.im div:after{
+  background:red;
+}
+.video_zone img:before{
+  background:red;
+}
+.captin:before{
+  background:red;
+}
+// .video_zone img {
+//   -ms-transform: scale(1.15); /* IE 9 */
+//   -webkit-transform: scale(1.15); /* Safari 3-8 */
+//   transform: scale(1.15);
+// }
+
+.video_zone {
+  overflow: hidden;
+}
+
+/* chiffre */
+.stat-item:not(.wide) {
+  border-left: 1px solid #EEEEEE;
+}
+
+.stats-container {
+  margin: 0;
+  background: #ffffff;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -moz-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -webkit-box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 17px 15px 17px 15px;
+  width: 50%;
+  flex: 1 1 auto;
+  text-align: center;
+  line-height: 24px;
+  border-bottom: 1px solid #EEEEEE;
+
+  @media (max-width:985px) and (min-width:768px) {
+    width: 100% !important;
+  }
+
+}
+
+.stat-label {
+  font-size: 12px;
+  line-height: 18px;
+  color: #4B4D55;
+  text-transform: uppercase;
+  font-family: SourceSansPro-Semibold;
+}
+
+.stat-value {
+  color: #e83936;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: SourceSansPro-Semibold;
+}
+
+.wide {
+  width: 100%;
+}
+
+.oz {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden !important;
+    position: relative;
+}
+
+/* end chiffre */
+
+
+/* ****** ***** **** ** ** ** * * * ** * * ** *  */
+
+
+.btn-floating i {
+  font-size: 21px;
+  color: white;
+}
+
+.btn-floating {
+  position: relative;
+  left: -8px;
+  top: -14px;
+  z-index: 1;
+  vertical-align: middle;
+  display: inline-block;
+  overflow: hidden;
+  width: 47px;
+  height: 47px;
+  padding: 10px 0px 5px 15px;
+  border-radius: 50%;
+  margin: 0px;
+  background-color: #d6970b;
+  color: #fff;
+  cursor: pointer;
+  transition: .3s;
+  width: 54.1px;
+  height: 52.1px;
+  width: 47px;
+  height: 47px;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.btn-mg {
+  position: absolute;
+  left: 43px;
+  margin-top: -7px;
+}
+

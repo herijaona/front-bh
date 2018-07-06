@@ -1,0 +1,34 @@
+<navbar-admin></navbar-admin>
+<nav class="navbar navbar-expand-sm nav-tel">
+    <ul class="navbar-nav ns">
+        <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/administration-in','desk']">Team</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','desk','questions']">Questions</a>
+        </li>
+        <!-- <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','desk','ideas']">Ideas</a>
+        </li> -->
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active"  [routerLink]="['/administration-in','desk', 'applications']">Applications</a>
+    </li> -->
+        <li class="nav-item">
+            <a class="nav-link disabled" routerLinkActive="active" [routerLink]="['/administration-in','desk', 'favorite']">Favorite</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','desk', 'invited-organisation']">Organizations</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','desk', 'historical']">Historical</a>
+        </li>
+    </ul>
+    <div class="icon-plus" (click)="toggleCollapse2()">
+        <i class="tp fa fa-plus"></i>
+    </div>
+</nav>
+<main class="">
+    <div class="ml-16">
+        <router-outlet></router-outlet>
+    </div>
+</main>

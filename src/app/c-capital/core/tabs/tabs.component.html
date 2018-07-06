@@ -1,0 +1,81 @@
+<div class="clear"></div>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs  tabs" role="tablist">
+    <li class="nav-item" id="tabs-a">
+        <a class="nav-link {{isSelectedBesoin}}" data-toggle="tab" (click)="viewUsersTeams('besoin')" role="tab">VOS BESOINS</a>
+    </li>
+    <li class="nav-item" id="tabs-a">
+        <a class="nav-link {{isSelectedOther}}" data-toggle="tab" (click)="viewUsersTeams('proposition')" role="tab">NOTRE PROPOSITION</a>
+    </li>
+</ul>
+<!-- Tab panes -->
+<div class="tab-content tabs card-block">
+    <ng-template [ngIf]="showBesoin">
+            <div class="tab-pane {{isSelectedBesoin}}" id="home1" role="tabpanel">
+                    <form class="form-horizontal">                            
+                    <label class="custon-ch">
+                    <span><b>Publier</b> vos sujets et projets d’innovation</span>
+                    <input  type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                    </label> 
+                    <label class="custon-ch">
+                    <span><b>Structurer</b> les échanges avec les startups</span>
+                    <input  type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                    </label>
+                    <label class="custon-ch">
+                    <span><b>Profiter</b> des travaux des laboratoires de recherche
+                        </span>
+                    <input  type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                    </label>  
+                    <label class="custon-ch">
+                    <span><b>Centraliser</b> les candidatures reçues</span>
+                    <input  type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                    </label>
+                    <label class="custon-ch">
+                    <span><b>Organiser</b> les observations des collaborateurs sur chaque candidature</span>
+                    <input  type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                    </label>             
+                    <label class="custon-ch">
+                    <span><b>Partager</b> les échanges générés aves vos collaborateurs dans une espace sécurisé
+                        </span>
+                    <input  type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                    </label><label class="custon-ch">
+                    <span><b>Permettre</b> à chaque collaborateur, service ,filiale, de centraliser des innovations trouvées dans leur environnement</span>
+                    <input  type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                    </label>
+                    <label class="custon-ch">
+                    <span><b>Superviser</b> un portefeuille de collaboration</span>
+                    <input  type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                    </label>            
+                    </form>
+            </div>
+    </ng-template>
+    <ng-template [ngIf]="invitedShow">
+            <div class="tab-pane {{isSelectedOther}}" id="home1" role="tabpanel">
+                    <form class="form-horizontal">                            
+                    <label class="custon-ch">
+                    <span><b>Publier</b>Lorem ipsum dolor sit amet. Excepteur sint occaecat cupidatat non proident</span>
+                    <input  type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                    </label> 
+                    <label class="custon-ch">
+                            <span><b>Publier</b>Lorem ipsum dolor sit amet. Excepteur sint occaecat cupidatat non proident</span>
+                    <input  type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                    </label>
+                    <label class="custon-ch">
+                            <span><b>Publier</b>Lorem ipsum dolor sit amet. Excepteur sint occaecat cupidatat non proident</span>
+                    <input  type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                    </label>             
+                    </form>
+            </div>
+    </ng-template>
+</div>

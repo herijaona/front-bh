@@ -1,0 +1,146 @@
+.cs_grid {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    .img-thumbnail {
+        width: 100%;
+        height: 75px;
+    }
+}
+
+@media(max-width:542px) {
+    .cs_grid {
+        width: 33%;
+    }
+}
+
+@media(max-width:348px) {
+    .cs_grid {
+        .img-hidden {
+            width: auto;
+        }
+    }
+}
+
+.overlay_ {
+    position: absolute;
+    top: 0;
+    background: black;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    height: 100%;
+}
+
+.cl_sl {
+    opacity: 1
+}
+
+.cs_grid:hover .overlay_ {
+    opacity: 1;
+}
+
+.chck {
+    position: absolute;
+    top: 40%;
+    left: 41%;
+    font-size: 18px;
+}
+
+._inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+._inputfile+label {
+    font-size: 1.0em;
+    font-weight: 700;
+    color: white;
+    background-color: transparent;
+    display: inline-block;
+}
+
+._inputfile:focus+label,
+._inputfile+label:hover {
+    background-color: #2841AA;
+}
+
+._inputfile+label {
+    cursor: pointer;
+    /* "hand" cursor */
+}
+
+.img-hidden {
+    position: relative;
+    overflow: hidden;
+    width: 100px;
+}
+
+.btn-unique-edit {
+    background: linear-gradient(-90deg, #e83936, #f94d37);
+}
+
+.ed-2 {
+    width: 100%;
+    margin-top: 1px;
+}
+
+.edit-person {
+    padding-left: 7px;
+}
+
+.inputfile {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
+.inputfile+label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: #8f9283;
+    display: inline-block;
+    width: 100%;
+    height: 46px;
+    border-radius: 4px;
+    margin-top: 2px;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    padding-top: 14px;
+}
+
+.inputfile:focus+label,
+.inputfile+label:hover {
+    background-color: red;
+}
+
+.inputfile+label {
+    cursor: pointer;
+    /* "hand" cursor */
+}
+
+.label-file {
+    font-size: 12px !important;
+    padding: 10px;
+    i {
+        padding-right: 10px;
+        font-size: 16px;
+    }
+}
+
+.inputfile:focus + label, .inputfile + label:hover {
+    background-color: #8f9283;
+}

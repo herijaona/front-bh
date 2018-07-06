@@ -1,0 +1,48 @@
+<!-- <div *ngIf="editPAGEstatus" class="edit_">
+    &nbsp;
+    <a class="waves-light p-2 mb-2 addBut" mdbWavesEffect (click)="AddNew()">
+        <i class="fa fa-plus mr-2 "></i> ADD NEW</a>
+</div> -->
+<!-- Default  before -->
+<div class="contt">
+    <ng-template [ngIf]="stZone">
+        <div class="row">
+            <div class="col-md-8 p-0 mb-30">
+                <div class="">
+                    <one-zone *ngIf="allZ1" [dataZone]="allZ1"></one-zone>
+                </div>
+            </div>
+            <div class="col-md-4 mb-30">
+                <div *ngIf="chrDtype">
+                    <one-zone *ngIf="chrDtype" [dataZone]="chrDtype"></one-zone>
+                </div>
+            </div>
+        </div>
+        <div>
+            <ngx-masonry [useImagesLoaded]="true" [options]="masonry_option">
+                <ngx-masonry-item *ngFor="let item of allZ" class="masonry-item normal mb-1">
+                    <div class="bbsh">
+                        <one-zone [dataZone]="item"></one-zone>
+                    </div>
+                </ngx-masonry-item>
+            </ngx-masonry>
+        </div>
+    </ng-template>
+</div>
+
+
+<div (onHide)="hiddedModal()" mdbModal #form="mdb-modal" class="modal fade" id="modalZoneForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [config]="{animated: true, ignoreBackdropClick: true, backdrop: true}">
+    <div *ngIf="addNewState" class="modal-dialog modal-lg new-zone-dialog" role="document">
+        <div class="modal-content success-content">
+            <div class="modal-header">
+                <h4 class="modal-title w-100" id="myModalLabel"> {{mdl_title}} </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModalAddNEw()">
+          <span aria-hidden="true">x</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <new-zone-mindset [existDtype]="existDtype" [action_type]='zoneActionType' [data_zone]="dataZoneEdit"> </new-zone-mindset>
+            </div>
+        </div>
+    </div>
+</div>

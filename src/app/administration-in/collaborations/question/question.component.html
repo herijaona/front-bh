@@ -1,0 +1,88 @@
+<div class="col-container">
+  <div *ngIf="!readyData">
+    <div class="loader"></div>
+  </div>
+  <div *ngIf="readyData" class="table-respo">
+    <h3 class="m-yq">Received :</h3>
+    <!-- has no Data -->
+    <div *ngIf="!hasData">
+      <p class="hasdata">
+        Hello,
+        <br> You did not received any questions about your collaborations.
+      </p>
+    </div>
+    <!--Table-->
+    <table *ngIf="hasData" class="table appli-table table-striped">
+      <!--Table head-->
+      <thead class="head-color">
+        <tr class="text-bl">
+          <th class="date">&nbsp; Date &nbsp;</th>
+          <th class="hour">hour</th>
+          <th class="name">First name</th>
+          <th class="name">Last name</th>
+          <th class="organisation">Organisation</th>
+          <th class="about">About</th>
+        </tr>
+      </thead>
+      <!--Table head-->
+      <!--Table body-->
+      <tbody *ngFor="let item of allQuestions" class="tb-items">
+        <tr>
+          <td class="t1">{{item.date}}</td>
+          <td class="t1">{{item.hour}}</td>
+          <td class="t2">{{item.userAsk.firstname}}</td>
+          <td class="t2">{{item.userAsk.lastname}}</td>
+          <td class="t2">{{item.userAsk.org}}</td>
+          <td class="t2">{{item.about.name}}</td>
+        </tr>
+        <tr class="reply-bm">
+          <th colspan="6" class="reply-b">
+            <a [routerLink]="['/administration-in','collaborations','questions','details' , item._id ]">
+              <span [innerHtml]="item.quest_part|bhSafeHtml"> </span>
+              <a class="more" target="_blank" [routerLink]="['/administration-in','collaborations','questions','details' , item._id ]">
+                More
+              </a>
+            </a>
+          </th>
+        </tr>
+      </tbody>
+      <!--Table body-->
+    </table>
+    <!--Table-->
+  </div>
+  <div>
+    <h3 class="m-yq">Your Questions :</h3>
+    <table class="table appli-table table-striped">
+      <thead class="head-color">
+        <tr class="text-bl">
+          <th>Date</th>
+          <th>Hour</th>
+          <th>Organisation</th>
+          <th>About</th>
+          <th>Interaction</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let tx of dataL" class="tb-items">
+        <tr>
+          <td class="t1">{{tx.date}}</td>
+          <td class="t1">{{tx.hour}}</td>
+          <td class="t2">{{tx.account.enseigneCommerciale}}</td>
+          <td class="t2">{{tx.collab.name}}</td>
+          <td class="t2">{{tx.interaction}}
+            <span *ngIf="tx.newFlag" class="badge badge-pill pink">new</span>
+          </td>
+        </tr>
+        <tr class="mre">
+          <th colspan="6">
+            <a [routerLink]="['/administration-in','collaborations','questions','details' , tx._id ]">
+              <span [innerHtml]="tx.resumContent|bhSafeHtml"> </span>
+              <a class="more" target="_blank" [routerLink]="['/administration-in','collaborations','questions','details' , tx._id ]">
+                More
+              </a>
+            </a>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

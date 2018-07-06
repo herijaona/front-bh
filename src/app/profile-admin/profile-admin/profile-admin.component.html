@@ -1,0 +1,185 @@
+<div class="jumbotron bg-mind">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light nav-two grid">
+      <a class="navbar-brand nr-brand" href="#"><img class="img-responsive" src="{{g.base_href}}assets/img/logo-bh.JPG" width="170"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="list-nav">
+          <li><h1>Business Haven</h1></li>
+          <li>
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"><i class="fa fa-tag" aria-hidden="true"></i><span class="pl-7">Laboratoire pharmaceutique</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-map-marker"></i><span class="pl-7">Paris</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-globe"></i><span class="pl-7">www.bh.fr</span></a>
+                  </li>
+              </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</div>
+<nav class="bg-light nav-one">
+  <div class="navbar navbar-expand-lg navbar-light grid">
+      <a class="navbar-brand" href="#"><img class="img-responsive img-logo" src="{{g.base_href}}assets/img/logo-bh.JPG" width="170"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse nav-col" id="navbarNav">
+        <ul class="navbar-nav mg-4">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Members</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Ideas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Questions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Web Postal</a>
+          </li>
+        </ul>
+      </div>
+  </div>
+</nav>
+<div class="container-fluid grid grid-top">
+  <h5 class="profile-h5">your profile</h5>
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="avatar mx-auto my-3">
+                            <img [src]="img_avatar" class="rounded-circle img-fluid" alt="First sample avatar image" width="100%">
+                        </div>
+                    </div>
+                    <div class="col-6 text-left font-my-3">
+                        <h3 class="font-weight-bold">
+                        <strong>John Doe</strong>
+                        </h3>
+                        <p class="grey-text-bold">johndoe@gmail.net<br><span>Director</span></p>
+                        <p class="span-connect"><span>349</span>&nbsp;connections<span>19</span>&nbsp;profils views</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="profile-text">
+            <div>Your profile is 97% complete</div>
+            <div class="progress-out">
+              <div class="progress-in"></div>
+            </div>
+          </div>
+          <div class="enter-text">
+            <p>Enter your commerciale name</p>
+            <p>Enter your social reason</p>
+            <p>Enter your location</p>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="title-edit">
+        <h4>Personnal info</h4>
+        <span>
+            <button type="button" class="btn  btn-block darken-edit ed"><i class="fa fa-pencil"></i><span class="edit-person">edit personnal info</span></button>
+        </span>
+      </div>
+      <form>
+          <div class="flex" style="width: 100%">
+            <span class="mg-left">
+                <label for="defaultFormRegisterNameEx" class="grey-text-form">Firstname</label>
+          <input type="text"  class="form-control col-xs-12">
+            </span>
+            <span class="mg-left-wt">
+                <label for="defaultFormRegisterNameEx" class="grey-text-form">Lastname</label>
+                <input type="text" class="form-control col-xs-12">
+              </span>
+          </div>
+          <br>
+          <div class="flex" style="width: 100%">
+              <span class="mg-left">
+                  <label for="defaultFormRegisterNameEx" class="grey-text-form">email</label>
+            <input type="email" class="form-control">
+              </span>
+              <span class="mg-left-wt">
+                  <label for="defaultFormRegisterNameEx" class="grey-text-form">function</label>
+                  <input type="text"  class="form-control">
+                </span>
+          </div>
+          <hr>
+          <div class="title-edit">
+              <h4>Connexion</h4>
+              <span>
+                  <button class="btn btn-unique-edit ed-2" type="submit"><i class="fa fa-check"></i><span class="edit-person">Save edit</span></button>
+              </span>
+          </div>
+          <div class="flex" style="width: 100%">
+              <span class="mg-left">
+                  <label for="defaultFormRegisterNameEx" class="grey-text-form">Password</label>
+                  <input type="password"  class="form-control">
+              </span>
+              <span class="mg-left-wt">
+                  <label for="defaultFormRegisterNameEx" class="grey-text-form">Confirm Password</label>
+                  <input type="password"  class="form-control">
+                </span>
+          </div>
+        </form> 
+        <hr>
+        <div class="title-edit">
+            <h4>Edit Organisation</h4>
+            <span>
+                <button type="button" class="btn  btn-block darken-edit ed"><i class="fa fa-pencil"></i><span class="edit-person">edit personnal info</span></button>
+            </span>
+        </div>
+        <form>
+            <div class="flex" style="width: 100%">
+              <span class="mg-left">
+                  <label for="defaultFormRegisterNameEx" class="grey-text-form">company name</label>
+                  <input type="text"  class="form-control" placeholder="Enter your company name">
+              </span>
+              <span class="mg-left-wt">
+                  <label for="defaultFormRegisterNameEx" class="grey-text-form">activity</label>
+                  <input type="text" class="form-control" placeholder="Enter your activity">
+                </span>
+            </div>
+            <br>
+            <div class="flex" style="width: 100%">
+                <span class="mg-left">
+                    <label for="defaultFormRegisterNameEx" class="grey-text-form">type</label>
+              <input type="text" class="form-control" placeholder="Technologie,Media">
+                </span>
+                <span class="mg-left-wt">
+                    <label for="defaultFormRegisterNameEx" class="grey-text-form">location</label>
+                    <input type="text"  class="form-control" placeholder="address:City,Country...">
+                  </span>
+            </div>
+            <br>
+            <div class="flex" style="width: 100%">
+                <span class="mg-left">
+                    <label for="defaultFormRegisterNameEx" class="grey-text-form">website</label>
+              <input type="text" class="form-control" placeholder="Your website link">
+                </span>
+                <span class="mg-left-wt">
+                    <button class="btn btn-unique-edit btn-width ed-2" type="submit"><i class="fa fa-check"></i><span class="edit-person">Save edit</span></button>    
+                </span>
+            </div>
+        </form> 
+    </div>
+    <div class="col-lg-4"></div>
+  </div>    
+</div>
+

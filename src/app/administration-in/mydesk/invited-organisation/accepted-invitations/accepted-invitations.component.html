@@ -1,0 +1,68 @@
+<div class="col-container">
+  <div class="table-respo">
+    <!--Table-->
+    <table class="table appli-table">
+      <!--Table head-->
+      <thead class="head-color">
+        <tr class="text-bl">
+          <th class="date">&nbsp; Date &nbsp;</th>
+          <th> Organisation name </th>
+          <th> Country </th>
+          <th class="last-name"> First name </th>
+          <th class="last-name"> Last name </th>
+          <th> Collaboration </th>
+          <th class="action"> Action </th>
+        </tr>
+      </thead>
+      <!--Table head-->
+      <!--Table body-->
+      <tbody>
+        <tr *ngFor="let item of allAccepted, let indx = index ">
+          <td class="no-wrp"> {{item.activeDate}} </td>
+          <td>{{item.orgName}}</td>
+          <td>{{item.orgCountry}}</td>
+          <td>{{item.userOrg.firstname}}</td>
+          <td>{{item.userOrg.lastname}}</td>
+          <td>
+            <!-- {{item.dataDetails.organisationName}} -->
+            <span *ngIf="item.collabNum == 1 "></span>
+            <span *ngIf="item.collabNum != 1 "> {{item.collabNum}} </span>
+          </td>
+          <td>
+            <!-- {{item.byUser.firstname+' '+item.byUser.lastname}} -->
+            <button (click)='selectCollaboration(item)' class="red btn select-btn1">Select</button>
+          </td>
+        </tr>
+      </tbody>
+      <!--Table body-->
+    </table>
+    <!--Table-->
+  </div>
+</div>
+
+<div style="overflow: auto;" mdbModal #modalHist="mdb-modal" class="modal fade" id="modalZoneForm2" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel1" aria-hidden="true" [config]="{backdrop: true, ignoreBackdropClick: true}">
+  <div class="modal-dialog m-d" role="document">
+    <div class="modal-content">
+      <button type="button" class="close close-md close-m" data-dismiss="modal" aria-label="Close" (click)="hideModal()">
+        <span aria-hidden="true">×</span>
+      </button>
+      <div class="modal-body p-5">
+        <div  *ngIf="showData"  class="askm">
+          <div *ngFor="let item of allCollab, let indx = index">
+            <p id="invite-for">
+                <label class="custon-ch">
+                  <span for="collab-{{indx}}" class="agree">{{item.name}}</span>
+                    <input [checked]="checkItems(item)" type="checkbox" id="collab-{{indx}}" type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </p>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="red btn select-btn">Valider</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

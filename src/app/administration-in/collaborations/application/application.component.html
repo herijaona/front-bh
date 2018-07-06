@@ -1,0 +1,47 @@
+<div *ngIf="readytoshow" class="col-container">
+  <h2>Application</h2>
+  <hr>
+  <h3>{{g.getCollabtypetext(detailsAll.projet.typeCollab)}}</h3>
+  <ng-template [ngIf]="detailsAll.projet.typeCollab == 'COLLABPROJINNOV'">
+    <p>
+      <strong>NAME : </strong>{{detailsAll.projet.name}}</p>
+    <h4>description</h4>
+    <p [innerHtml]="detailsAll.applDetail.user_application_describ"></p>
+    <div class="identity">
+      <h3>identity</h3>
+      <div class="flex fx">
+        <p class="mr-4">
+          <strong>Organisation name : </strong>{{detailsAll.candidat.org}}</p>
+        <p class="mr-4">
+          <strong>Date : </strong>{{detailsAll.date}}</p>
+        <p class="mr-4">
+          <strong>Country : </strong>{{detailsAll.applDetail.countryCD}}</p>
+      </div>
+    </div>
+    <h3 class="activity-skills">Activity and skills</h3>
+    <h4>Main area of activity</h4>
+    <p [innerHtml]="detailsAll.applDetail.main_activity_domain | bhSafeHtml"></p>
+    <h4>Second area of activity</h4>
+    <p [innerHtml]="detailsAll.applDetail.secondary_activity_domain | bhSafeHtml"></p>
+    <h4>Skills and specificite :</h4>
+    <p [innerHtml]="detailsAll.applDetail.skill_specificities | bhSafeHtml"></p>
+    <h3>Proposition of collaboration</h3>
+    <p class="toupper">Ad do consectetur consectetur consequat esse mollit proident enim cillum occaecat laborum dolore nostrud eiusmod sunt
+      nisi ea ea do dolore sit dolore ut officia.</p>
+    <p [innerHtml]="detailsAll.applDetail.collab_proposal_describ | bhSafeHtml"></p>
+  </ng-template>
+  <div *ngIf="detailsAll.status != 'accepted'" class="text-right btn-app mb-4">
+    <button (click)="acceptApplication()" class="btn btn-success green-color">
+      <i class="fa fa-check"></i>Accept</button>
+    <button (click)="refusedpplication()" class="btn btn-success red-color">
+      <i class="fa fa-ban"></i>refuse</button>
+    <button (click)="closeAction()" class="btn btn-success gray-color">
+      <i class="fa fa-close"></i>close</button>
+  </div>
+  <div *ngIf="detailsAll.status == 'accepted'" class="text-right btn-app mb-4">
+    Application Accepted
+  </div>
+  <div *ngIf="detailsAll.status == 'refused'" class="text-right btn-app mb-4">
+    Application refused
+  </div>
+</div>

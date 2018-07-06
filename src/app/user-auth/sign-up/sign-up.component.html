@@ -1,0 +1,98 @@
+<!-- <div class="bg-fr-color">
+    <img [src]="img_avatar" class="rty img-top" alt="First sample avatar image" width="100%" height="100%" style="position:absolute;">
+</div> -->
+<div class="section-login">
+    <section class="form-dark row">
+        <div class=" bg-register col-xl-7 col-lg-7 col-md-12 col-sm-12 col-xs-12">
+            <form id="registerForm_" [formGroup]="registerForm" (ngSubmit)="onFormSubmit()" class="">
+                <div class="text-white content-rgba py-5 px-5-edit">
+                    <div class="text-left text-logo">
+                        <!-- <img [src]="img_logo" class="rty" alt="First sample avatar image" width="200px" height="100%"> -->
+                        <h4>Sign up</h4>
+                        <p>Registration is free</p>
+                    </div>
+                    <h5 class="title-second">Personal info</h5>
+                    <div class="row">
+                        <div class="col-md-6  col-sm-6">
+                            <div class="input-md">
+                                <label for="bh_firstname">First Name</label>
+                                <input placeholder="Enter your first name" [ngClass]="{'err_sh' : registerForm.controls.bh_firstname.invalid && registerForm.controls.bh_firstname.touched }" type="text" formControlName="bh_firstname" id="bh_firstname" class="form-control" mdbActive>
+                                <span class="err_msg" *ngIf="registerForm.controls.bh_firstname.invalid && registerForm.controls.bh_firstname.touched">Champ Obligatoire</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="input-md">
+                                <label for="bh_lastname">Last Name</label>
+                                <input placeholder="Enter your last name" type="text" formControlName="bh_lastname" id="bh_lastname" class="form-control" mdbActive>
+                                <span class="err_msg" *ngIf="registerForm.controls.bh_lastname.invalid && registerForm.controls.bh_lastname.touched">Champ Obligatoire</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="input-md">
+                                <label for="bhemail">Your e-mail</label>
+                                <input placeholder="Enter your e-mail" type="email" (change)="detectEmail()" formControlName="bhemail" id="bhemail" class="form-control" mdbActive validate required="required">
+                                <span>
+									<span class="err_msg" *ngIf="registerForm.controls.bhemail.invalid && registerForm.controls.bhemail.touched && !used_email && !em_empty">Email invalide</span>
+                                <span class="err_msg" *ngIf="registerForm.value.bhemail == '' && registerForm.controls.bhemail.touched && !used_email && em_empty ">Champ obligatoire</span>
+                                <span class="err_msg" *ngIf="used_email">Email deja Utilisee </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="input-md">
+                                <label for="bh_functions">Function:</label>
+                                <input placeholder="Enter your function" [ngClass]="{'err_sh' : registerForm.controls.bh_functions.invalid && registerForm.controls.bh_functions.touched }" type="text" formControlName="bh_functions" id="bh_functions" class="form-control" mdbActive>
+                                <span class="err_msg" *ngIf="registerForm.controls.bh_functions.invalid && registerForm.controls.bh_functions.touched">Champ Obligatoire</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="input-md">
+                                <label for="bh_pass">Your password</label>
+                                <input placeholder="Enter your password" (keyup)="passCheck()" type="password" formControlName="bh_pass" id="bh_pass" class="form-control" mdbActive>
+                                <span class="err_msg" *ngIf="registerForm.controls.bh_pass.invalid && registerForm.controls.bh_pass.touched && !passNotEqual">Champ Obligatoire - minimum 8 caracteres</span>
+                                <span class="err_msg" *ngIf="passNotEqual">Mot de passe non Egaux</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="input-md	">
+                                <label for="bh_pass_conf">Confirm password</label>
+                                <input placeholder="Confirm password" (keyup)="passCheck()" type="password" formControlName="bh_pass_conf" id="bh_pass_conf" class="form-control" mdbActive>
+                                <span class="err_msg" *ngIf="passNotEqual">Mot de passe non Egaux</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="p-15 mt-4">
+                        <span class="mg-left-wt">
+                              <p id="invite-for">
+                                <label class="custon-ch">
+                                  <span class="agree">I agree all statments in terms of service</span>
+                        <input type="checkbox" checked="checked">
+                        <span class="checkmark"></span>
+                        </label>
+                    </p>
+                    </span>
+                    </p>
+                    <div class="row mt-4">
+                        <div class="col-md-6 col-sm-6">
+                            <button [ngClass]="{'disabled': !registerForm.valid || registerForm.value.bh_pass_conf != registerForm.value.bh_pass || registerForm.controls.bh_pass.untouched }" type="submit" class="btn btn-success btn-block btn-rounded z-depth-1 bg-sign" mdbRippleRadius>Sign up</button>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <p class="agree mb-agree">already member &nbsp;?&nbsp;
+                                <a><span [routerLink]="['/login']">sign in</span></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 p-0">
+            <div class="meet-future" [ngStyle]="{'background-image': getUrl()}">
+                <aside></aside>
+            </div>
+        </div>
+    </section>
+</div>

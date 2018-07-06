@@ -1,0 +1,111 @@
+<!-- <ng-template [ngIf]="communityShow">
+    <div class="">
+      <table class="table appli-table">
+        <thead class="head-color">
+          <tr class="text-bl">
+            <th>Date</th>
+            <th>Organisation</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>About</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of userCommData">
+            <th class="tb">
+              {{getDateString(item.last_date)}}
+            </th>
+            <td>{{item.org}}</td>
+            <td class="tb">{{item.us.firstname}}</td>
+            <td class="tb">{{item.us.lastname}}</td>
+            <td>
+              <span *ngIf="item.last_act !='application'" class="text-capitalize">
+                        {{item.last_act}}
+                    </span>
+              <span *ngIf="item.last_act =='application'" class="text-capitalize">
+                        {{item.lastPrName}}
+                    </span>
+            </td>
+            <td class="text-center">
+            	<span *ngIf="item.last_act !='application'" class="text-capitalize">
+                        Passive
+                    </span><span *ngIf="item.last_act =='application'" class="text-capitalize">
+                        passive/active (wait deal space)
+                    </span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-template> -->
+<!-- [ngIf]="communityShow" -->
+<!-- <ng-template >
+  <div class="">
+    <div class="table-respo">
+      <table class="table appli-table table-striped">
+        <thead class="head-color">
+          <tr class="text-bl">
+            <th>Date</th>
+            <th class="position-realtive cn">
+              <div>
+                Organisation
+                <i class="fa fa-search pl-3"></i>
+                <br>
+                <div class="text-center">
+                  <i class="fa fa-angle-down"></i>
+                </div>
+              </div>
+            </th>
+            <th>Country</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Activity</th>
+            <th>Last</th>
+            <th>About</th>
+            <th>Community</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of userCommData">
+            <td>
+              <a>{{getDateString(item.last_date)}}</a>
+            </td>
+            <td>{{item.org}}</td>
+            <td>{{item.us.firstname}}</td>
+            <td>{{item.us.lastname}}</td>
+            <td>
+              <a>22</a>
+            </td>
+            <td>Manage</td>
+            <td>
+              <span *ngIf="item.last_act !='application'" class="text-capitalize">
+                {{item.last_act}}
+              </span>
+              <span *ngIf="item.last_act =='application'" class="text-capitalize">
+                {{item.lastPrName}}
+              </span>
+            </td>
+            <td>
+              <a>22</a>
+            </td>
+            <td>Lasr
+            </td>
+          </tr>
+        </tbody>
+        <!- -Table body- ->
+      </table>
+      <!- -Table- ->
+    </div>
+    <div class="text-center">
+      <a class="btn-tab1">1</a>
+      <a class="btn-tab2">2</a>
+      <a class="btn-tab2">2</a>
+      <a class="btn-tab3">Suivant</a>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template [ngIf]="anyUser">
+  <div>Any User Found</div>
+</ng-template>
+ -->

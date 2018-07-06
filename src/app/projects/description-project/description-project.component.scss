@@ -1,0 +1,235 @@
+.bg-mind {
+    background-image: url(/assets/img/london.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 355px;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 0px;
+}
+
+.nr-brand {
+    visibility: hidden;
+}
+
+.nav-two {
+    background-color: transparent !important;
+    height: 75px;
+    top: 261px;
+    h1 {
+        color: white;
+        font-family: "SourceSansPro-bold";
+    }
+    ul li ul li a {
+        color: white;
+        font-family: "SourceSansPro-Lighter";
+        font-style: italic;
+    }
+}
+
+.grid {
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: none;
+}
+
+.nav-col {
+    margin-top: -37px;
+}
+
+.nav-one {
+    margin-bottom: 45px;
+    max-height: 51px;
+    box-shadow: 0px 1px 2px 0px grey;
+    padding-bottom: 0;
+    .nav-link {
+        background: transparent !important;
+        color: rgba(0, 0, 0, 0.5) !important;
+    }
+    ul li a {
+        font-family: "SourceSansPro-bold";
+    }
+    .active .nav-link {
+        border-bottom: 3px solid #e84d3f;
+        color: rgba(0, 0, 0, 0.9) !important;
+    }
+}
+
+.img-logo {
+    margin-top: -45px;
+}
+
+.presentation {
+    text-align: justify;
+    h2 {
+        border-bottom: 1px solid #b9b7b7;
+        font-size: 19px;
+        padding-bottom: 17px;
+        font-family: "SourceSansPro-bold";
+    }
+    p {
+        color: gray;
+        font-size: 15px;
+        font-family: "SourceSansPro-Lighter";
+    }
+}
+
+.btn-apply {
+    background: #f73547;
+    border: 1px solid #f73547;
+    color: white !important;
+    font-size: 16px;
+    border-radius: 0px;
+    text-transform: initial;
+    width: 145px;
+    padding: 7px 0 7px 0px;
+    box-shadow: none;
+    font-size: 14px;
+    span {
+        padding-right: 10px;
+    }
+}
+
+.btn-question {
+    background: black;
+    border: 1px solid black;
+    border-radius: 0;
+    font-size: 16px;
+    box-shadow: none;
+    width: 145px;
+    padding: 7px 0 7px 0px;
+    font-size: 14px;
+    span {
+        padding-right: 10px;
+    }
+}
+
+.hr {
+    margin-bottom: 20px;
+}
+
+.grid-top {
+    margin-bottom: 20px;
+}
+
+.nav-down {
+    font-size: 13px;
+    span {
+        color: gray;
+        padding-left: 5px;
+    }
+    svg {
+        color: gray;
+    }
+}
+
+.nav-down li a {
+    color: gray;
+}
+
+.project-list {
+    position: relative;
+    box-shadow: 0px 0px 3px 1px #b9b9b9;
+    padding: 44px 42px 200px 44px;
+}
+
+.list-nav {
+    padding: 0;
+    list-style: none;
+    h3 {
+        color: #e84d3f;
+        font-size: 13px;
+        margin-left: -25px;
+        color: #e83936;
+        font-family: "SourceSansPro-Semibold";
+        svg {
+            font-size: 27px;
+            transform: -5px;
+            transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            left: -27px;
+            position: relative;
+        }
+    }
+    h4 {
+        font-size: 18px;
+        font-family: "SourceSansPro-Semibold";
+    }
+    ul li a {
+        padding: 14px 15px 14px 0px;
+    }
+}
+
+.list-nav h3 span {
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+@media (max-width:491px) {
+    .nav-down li {
+        margin-bottom: -15px;
+    }
+}
+
+.text-it {
+    font-weight: bolder;
+}
+
+.specialField {
+    background-color: pink;
+    width: auto;
+    position: absolute;
+    padding: 15px;
+}
+
+.title-propos {
+    font-size: 18px;
+    font-family: "SourceSansPro-Semibold";
+}
+
+.flx {
+    display: flex;
+    span {
+        font-weight: bolder;
+    }
+}
+
+.programmed {
+    p {
+        font-size: 18px;
+        font-family: "SourceSansPro-Semibold";
+    }
+    h6 {
+        font-size: 14.5px;
+        font-family: "SourceSansPro-Regular";
+    }
+}
+.ask-app{
+    position: relative;
+    top: 202px;
+}
+
+@media(max-width: 1090px){
+.project-list {
+    position: relative;
+    box-shadow: 0px 0px 3px 1px #b9b9b9;
+    padding: 44px 42px 4px 44px;
+}
+.specialField {
+    position: relative;
+}
+.ask-app{
+    position: initial;
+    top: 0px;
+    margin: 0;
+    }
+}
+@media(max-width: 348px){
+    .project-list {
+    padding: 11px;  
+    }
+    .list-nav h3{
+        margin-left: -3px;
+    }
+}

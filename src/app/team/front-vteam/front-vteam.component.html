@@ -1,0 +1,62 @@
+<div class="container-fluid grid grid-top">
+    <div *ngIf="editPAGEstatus" class="post-top">
+        <a (click)="tmVEdit()" class="erew">
+            <i class="fa fa-pencil"></i>
+        </a>
+        <a (click)="tmVDelete()" class="erew2">
+            <i class="fa fa-trash"></i>
+        </a>
+    </div>
+
+    <ng-template [ngIf]="teamVideoData.type==1">
+        <div class="row">
+            <div (click)="tmVShow()" class="col-team top-team">
+                <img class="img-responsive img-clip-path t-p" [src]="im_poster" width="100%" height="100%">
+                <div *ngIf="readyDT" class="text-video">
+                    <div>
+                        <i class="fa fa-play"></i>
+                    </div>
+                    <div>
+                        <h5>{{tmsDetails.usr}}</h5>
+                        <p>{{tmsDetails.fn}} - {{tmsDetails.acc}}</p>
+                    </div>
+                </div>
+                <div class="overlay_">
+                    <i class="fa fa-search chck"></i>
+                </div>
+            </div>
+            <div class="col-team-2 presentation mt-4p">
+                <div [innerHtml]="teamVideoData.data.textTeam | bhSafeHtml" class=""></div>
+                <p class="lead">
+                    <a [ngClass]="{'disabled': !disabled_btn}" class="btn btn-primary btn-lg btn-wnt" href="#" role="button">vous avez une question
+            <i class="fa fa-question-circle icon-question"></i>
+          </a>
+                    <a (click)="ask_questions_toTeam($event)" class="btn btn-primary btn-lg btn-crt" href="#" role="button">dites-moi</a>
+                </p>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template [ngIf]="teamVideoData.type==0">
+        <div class="row">
+            <div class="col-team top-team">
+                <img class="img-responsive img-clip-path t-p" [src]="im_poster" width="100%" height="100%">
+            </div>
+            <div class="col-team-2 presentation mt-4p">
+                <h3 class="font-weight-bold">
+                    <strong>{{tmsDetails.usr}}</strong>
+                    <span>{{tmsDetails.fn}}</span>
+                </h3>
+                <div [innerHtml]="teamVideoData.data.textTeam | bhSafeHtml" class=""></div>
+                <p class="lead">
+                    <a [ngClass]="{'disabled': !disabled_btn}" class="btn btn-primary btn-lg btn-wnt" href="#" role="button">vous avez une question
+            <i class="fa fa-question-circle icon-question"></i>
+          </a>
+                    <a (click)="ask_questions_toTeam($event)" class="btn btn-primary btn-lg btn-crt" href="#" role="button">dites-moi</a>
+                </p>
+            </div>
+        </div>
+
+
+    </ng-template>
+</div>
+<hr>

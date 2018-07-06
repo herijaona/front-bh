@@ -1,0 +1,78 @@
+<div class="st">
+  <div class="col-container mt-5">
+    <div class="row">
+      <div class="col-lg-10 general-set">
+        <div class="row">
+          <div class="col-lg-6 p-0">
+            <h5>Pages :</h5>
+            <p class="flw">
+              <span class="pr-5 mindset">Mindset :</span>
+              <label class="switch">
+                <input type="checkbox" checked (click)="readOnlyFn()">
+                <span class="slider round"></span>
+              </label>
+            </p>
+            <p class="flw">
+              <span class="pr-5 mindset">Committee :</span>
+              <label class="switch">
+                <input (change)="changePageData($event, 'pTeam')" type="checkbox" [checked]="verifyST('pTeam')">
+                <span class="slider round"></span>
+              </label>
+            </p>
+            <p class="flw">
+              <span class="pr-5 mindset">Collaborations :</span>
+              <label class="switch">
+                <input (change)="changePageData($event, 'pProjects')" type="checkbox" [checked]="verifyST('pProjects')">
+                <span class="slider round"></span>
+              </label>
+            </p>
+            <p class="flw">
+              <span class="pr-5 mindset">Success Stories :</span>
+              <label class="switch">
+                <input (change)="changePageData($event, 'pSs')" type="checkbox" [checked]="verifyST('pSs')">
+                <span class="slider round"></span>
+              </label>
+            </p>
+          </div>
+          <div class="col-lg-6 p-0">
+            <h5>Collaboratoins</h5>
+            <p class="flw">
+              <span class="pr-5 mindset">Suggestions :</span>
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </p>
+            <p class="flw">
+              <span class="pr-5 mindset">Projets :</span>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </p>
+            <p class="flw">
+              <span class="pr-5 mindset">Incubation :</span>
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+              </label>
+            </p>
+            <p class="flw">
+              <span class="pr-5 mindset">Investment :</span>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+            </p>
+          </div>
+        </div>
+        <div>
+          <button (click)="saveDataConfig()" class="btn red">Save</button>
+        </div>
+      </div>
+      <div class="col-lg-2">
+
+      </div>
+    </div>
+  </div>
+</div>

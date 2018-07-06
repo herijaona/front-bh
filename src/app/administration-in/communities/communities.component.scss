@@ -1,0 +1,128 @@
+#modalZoneForm {
+    background-color: #00000057;
+}
+.float-r{
+    float: left;
+    position: absolute;
+    right: 0;
+    color: white;
+    background: #f73547;
+    right: 52px;
+    top: 4px;
+    i{
+        margin-right: 5px;
+    }
+}
+.nav-tel .ns li .active {
+    padding-bottom: 12px;
+}
+
+.nav-tel .ns li {
+    margin-right: 7px;
+}
+
+.input-md {
+    label {
+        text-transform: uppercase;
+        font-family: SourceSansPro-Semibold;
+        color: #606060;
+        letter-spacing: 0.3px;
+        margin-bottom: 3px;
+        font-size: 13px;
+    }
+    .form-control {
+        border: 1px solid #f4f3f3;
+        box-shadow: none;
+        font-size: 13.5px;
+        height: 43px;
+        padding: 4px 4px 4px 4px;
+    }
+}
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=time],
+input[type=date],
+input[type=datetime-local],
+input[type=tel],
+input[type=number],
+input[type=search-md],
+input[type=search],
+textarea.md-textarea {
+    border: 1px solid #f4f3f3;
+    border-radius: 4px;
+    height: 23px;
+    padding-left: 4px;
+    width: 95%;
+    font-size: 13.5px;
+}
+
+.osq{
+    border: 1px solid #f4f3f3;
+    box-shadow: none;
+    font-size: 13.5px;
+    height: 92px;
+    padding: 4px 4px 4px 4px;
+}
+
+.md-new {
+    width: 90%;
+    margin: 0 auto;
+    border-bottom: 1.5px solid #f7354769;
+    h2{
+        color: #f73547cc;
+        font-size: 18.5px;
+        font-family: SourceSansPro-Regular;
+        position: relative;
+        top: 12px;
+        i{
+            margin-right: 15px;
+        }
+}
+}
+.fx{
+    float: right;
+}
+.cnc{
+    width: 35px;
+    height: 31px;
+    margin-right: 14px;
+    opacity: 0.9;
+    margin-top: -4px;
+}
+.fca{
+    background: #929292;
+    color: white !important;
+    font-family: SourceSansPro-Semibold;
+    font-size: 14px;
+    padding: 8px 15px 8px 15px;
+    height: 38px;
+}
+.fc{
+    background: #f73547;
+    color: white !important;
+    font-family: SourceSansPro-Semibold;
+    margin-left: 10px;
+    font-size: 14px;
+    padding: 8px 15px 8px 15px;
+    height: 38px;
+}
+
+@media(max-width: 767px){
+    .nav-tel{
+        width: 100%;
+        display: inline-block !important;
+        padding-left: 1rem !important;
+    }
+    .ns{
+        text-align: center;
+        margin: 0 auto;
+    }
+    .float-r{
+        position: relative;
+        top: 0px;
+        right: 0;
+        float: initial;
+    }
+}

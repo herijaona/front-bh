@@ -1,0 +1,77 @@
+.card {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin: 25px 0;
+  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.14);
+  border-radius: 0px !important;
+  color: rgba(0, 0, 0, 0.87);
+  background: #fff;
+}
+
+.card-stats .card-header {
+  float: left;
+  text-align: center;
+}
+
+.card [data-background-color] {
+  color: #FFFFFF;
+}
+
+.card [data-background-color="orange"] {
+  background: linear-gradient(60deg, #ffa726, #fb8c00);
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 152, 0, 0.4);
+}
+
+.card [data-background-color] {
+  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  margin: -20px 15px 0;
+  border-radius: 3px;
+  padding: 15px;
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.card .card-header {
+  padding: 0px;
+  z-index: 3;
+  border-bottom-width: 0px !important;
+}
+
+.card-header img {
+  width: 90px;
+  height: 90px
+}
+
+.card-stats .card-content {
+  text-align: right;
+  padding-top: 10px;
+}
+
+.card .card-content {
+  padding: 15px 20px;
+  position: relative;
+}
+
+.card .card-footer {
+  margin: 0;
+  padding-top: 10px;
+  border-top: 1px solid #eeeeee;
+  border-radius: 0px
+}
+
+p.namecommerce {
+  margin-top: -5px !important;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.nimb {
+  color: grey;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.erd {
+  color: gray;
+}

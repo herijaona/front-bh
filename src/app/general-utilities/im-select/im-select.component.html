@@ -1,0 +1,33 @@
+<div *ngIf="hasImage" class="row">
+    <div *ngFor="let item of imbiblio" class="col-sm-6 col-md-2 col-lg-3 col-xl- 2 cs_grid">
+        <a (click)="itemClicked($event,item)" class="" href="">
+            <div class="img-hidden">
+                <img class="img-thumbnail img-fluid" [src]="item.url" alt="Park" height="76px">
+                <div class="overlay_">
+                    <i class="fa fa-check chck"></i>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-md-6 col-sm-6 text-center">
+        <div class="file-field">
+            <input multiple (change)="upImChanged($event,'_filev')" id="_filev" name="_filev" type="file" accept="image/*" class="inputfile" mdbActive>
+            <label for="logoFile" class="label-file">
+        <i class="fa fa-upload"></i>
+        <strong>Add a file</strong>
+      </label>
+        </div>
+
+
+        <!--  <span id="chosen_file">Choose a file</span> -->
+    </div>
+    <div *ngIf="changeOk && allowDestfile()" class="col-md-6">
+        <button (click)="Okchange()" class="btn btn-unique-edit btn-width ed-2" type="submit">
+      <i class="fa fa-check"></i>
+      <span class="edit-person">OK</span>
+    </button>
+    </div>
+</div>

@@ -1,0 +1,138 @@
+<div class="bg-deal">
+  <div class="container-fluid pl-0">
+    <div class="">
+      <div class="row">
+        <section class="col-team team-fr">
+          <div>
+            <h2>Subjects</h2>
+            <button (click)="showModal()" class="btn create-subject">Create Subject</button>
+            <div class="clearfix"></div>
+            <div *ngFor="let item of allSubjetcs">
+              <div (click)="selectSubjects(item)" class="pointer_cursor media team-media">
+                <i class="fa fa-circle-thin i-triangle"></i>
+                <div class="media-body pr">
+                  <h5 class="mt-0 mb-1">{{item.name}}</h5>
+                  <span>{{item.byUser.lastname +' '+ item.byUser.firstname}}</span>
+                </div>
+                <div class="time-count">
+                  <span>1</span>
+                  <br>
+                  <span>{{ getDateText(item.creationDate) }}</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+        <section class="col-content content-eco-fr">
+          <div style="display: flex">
+            <h2>Community: </h2>
+            <h2 *ngIf="readyData(commDETAILS)">{{commDETAILS.name}}</h2>
+          </div>
+          <div>
+            <div *ngIf="readyData(slctSubject)">
+              <div class="readydata">
+                <h3>Subjects:</h3>
+                <strong>Name:</strong>&nbsp;
+                <span>{{slctSubject.name}}</span>
+                <br>
+                <strong>by:</strong>&nbsp;
+                <span>{{slctSubject.byUser.lastname +' '+ slctSubject.byUser.firstname}}</span>
+                <br>
+                <div>
+                  <strong>content:&nbsp;</strong>
+                  <div [innerHtml]="slctSubject.subject"></div>
+                </div>
+              </div>
+              <div>
+                <span class="response-let">Response:</span>
+                <div *ngFor="let respIN of slctSubject.responseAll">
+                  by: {{respIN.byUser.lastname+' '+respIN.byUser.lastname}}
+                  <br> date: {{getDateText(respIN.responseDate)}}
+                  <br>
+                  <div [innerHtml]="respIN.responseContent"></div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="!readyData(slctSubject)" class="select-view">
+              Select subjects to view datas
+            </div>
+          </div>
+          <!-- <nav class="navbar navbar-expand-sm nav-tel">
+            <ul class="navbar-nav ns">
+              <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['/administration-in','communities','community-space','application-space']">Application</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','communities','community-space','files']">Files</a>
+              </li>
+              <li class="nav-item">
+                                <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','deal-space','question-answers']">Questions-Answers</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','deal-space','planning']">Planning</a>
+                            </li>
+            </ul>
+          </nav>
+          <main class="collaboration-container">
+            <div class="ml-16">
+              <router-outlet></router-outlet>
+            </div>
+          </main> -->
+
+        </section>
+        <section>
+          <h2>Users</h2>
+          <div *ngIf="readyData(commDETAILS)">
+            <div *ngIf="commDETAILS.users_in.length > 0">
+              <span *ngFor="let itemm of commDETAILS.users_in" class="item-lastname">
+                <span>{{itemm.lastname+' '+ itemm.firstname}}</span>
+                <br>
+              </span>
+            </div>
+            <div *ngIf="commDETAILS.users_in.length === 0">
+              Community doesn't have any User
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div [config]="{backdrop: false, ignoreBackdropClick: false}" style="overflow: auto;" mdbModal #modalSet="mdb-modal" class="modal fade"
+  id="modalZoneForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+  <div class="modal-dialog" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header md-new">
+        <h2>
+          Create new Subject
+        </h2>
+      </div>
+      <!--Body-->
+      <div class="modal-body mb-0">
+        <form [formGroup]='newSubjectForm'>
+          <div class="input-md">
+            <label for="sName">Name</label>
+            <input placeholder="Subject Name" id="sName" formControlName="subjectName" class="form-control" mdbActive validate required="required">
+          </div>
+          <div class="pb-3 input-md">
+            <label for="sContent">Content:</label>
+            <ckeditor name='sContent' formControlName="subjectContent" height="100px" rows="40" cols="40" placeholder="your questions for the community"
+              [config]="g.getConfig('conf0_editor')" [readonly]="false" (change)="onChange($event)" (editorChange)="onEditorChange($event)"
+              (ready)="onReady($event)" (focus)="onChange($event)" (blur)="onChange($event)" debounce="500">
+            </ckeditor>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer pt-0 border-0">
+        <button (click)="modalSet.hide()" class="nav-link select-col fca">cancel</button>
+        <button (click)="saveAndSendSubject()" [ngClass]="{disabled: !newSubjectForm.valid || !icheckChange()}" class="nav-link select-col fc">Save</button>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>

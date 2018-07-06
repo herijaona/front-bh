@@ -1,0 +1,76 @@
+<div class="mdb_genModal">
+  <div *ngIf="hasNotif" class="login_notif">
+    <div class=" logg alert alert-{{alrt_type}}">
+      <span [innerHtml]="msg_error"></span>
+    </div>
+  </div>
+  <!-- Section Login -->
+  <section class="" *ngIf='!loginFormFlag'>
+    <div class="card card-image bg-login">
+      <form class="form-up" [formGroup]="resetpassForm" (ngSubmit)="resetFormSubmit()">
+        <div class="text-white content-rgba py-5 px-5-edit z-depth-4">
+          <div class="text-center text-logo">
+            <!-- <img [src]="img_logo" class="rty" alt="First sample avatar image" width="53%" height="100%"> -->
+            <h4>Reinitialiser mot de passe</h4>
+          </div>
+          <div class="md-form">
+            <input type="email" placeholder="Your email" formControlName="bhemail" id="bhemail" class="form-control" mdbActive validate
+              required="required">
+          </div>
+          <div class="row d-flex align-items-center">
+            <div class="text-center mb-3 col-md-12">
+              <button [ngClass]="{'disabled':!resetpassForm.valid }" type="submit" class="btn btn-success btn-block btn-rounded z-depth-1 bg-sign">Sign in</button>
+            </div>
+          </div>
+          <div class="already-member text-center">se connecter? click
+            <a (click)='forgotPasswordInit($event)' href="">
+              <span class="recovery">ici</span>
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- Section Reset Password -->
+  <section class="" *ngIf='loginFormFlag'>
+    <div class="card card-image bg-login">
+      <form class="form-up" [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+        <div class="text-white content-rgba py-5 px-5-edit z-depth-4">
+          <div class="text-center text-logo">
+            <!-- <img [src]="img_logo" class="rty" alt="First sample avatar image" width="53%" height="100%"> -->
+            <h4>Login to your account</h4>
+            <p>Collaborate with innovative ecosystems</p>
+          </div>
+          <div class="input-md">
+            <label>Email</label>
+            <input placeholder="Your email" type="email" formControlName="bhemail" id="bhemail" class="form-control" mdbActive validate
+              required="required">
+          </div>
+          <div class="pb-3 input-md">
+            <label>password</label>
+            <input placeholder="Your password" type="password" formControlName="bh_pass" id="bh_pass" class="form-control" mdbActive>
+          </div>
+          <div class="mdp-me">
+            <span class="remember-me">Remember me</span>
+            <span class="forgot-pwd">Forgot password ?
+              <a (click)='forgotPasswordInit($event)' href="">
+                <u class="recovery">Recovery</u>
+              </a>
+            </span>
+          </div>
+          <div class="row d-flex align-items-center">
+            <div class="text-center mb-3 col-md-12">
+              <button [ngClass]="{'disabled':!loginForm.valid}" type="submit" class="btn btn-success btn-block btn-rounded z-depth-1 bg-sign">Sign in</button>
+            </div>
+          </div>
+          <div class="already-member text-center">not already member ?
+            <a [routerLink]="['/register-organisation']">
+              <span class="recovery">sign up</span>
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- End Section -->
+</div>

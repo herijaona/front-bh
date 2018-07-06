@@ -1,0 +1,36 @@
+$color1: #393f4b;
+$color2: #f8f8fa;
+$color3: #e83936;
+.option-div {
+    position: relative;
+    display: flex;
+    margin-top: 14px;
+    margin-right: 15px;
+}
+
+.option-list {
+    select {
+        font-size: 14px;
+        color: $color1;
+        padding-left: 9px;
+        font-family: SourceSansPro-Semibold;
+        border-radius: 2px;
+        border: 1px solid #373d494f;
+        padding-right: 30%;
+    }
+}
+
+.option-select {
+    margin-left: 10px;
+    top: -9px;
+    position: absolute;
+    z-index: 9;
+    color: white;
+    background: #373d49;
+    text-transform: uppercase;
+    font-size: 11px;
+    padding-left: 10px !important;
+    font-family: SourceSansPro-Semibold;
+    padding-right: 10px;
+    border-radius: 2px;
+}

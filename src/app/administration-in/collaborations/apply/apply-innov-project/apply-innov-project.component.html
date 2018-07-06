@@ -1,0 +1,73 @@
+<div class="header-text">
+  <div [innerHtml]="prObjApply.collabData.contexte"></div>
+  <hr>
+</div>
+<div class="proposal">
+  <h2>the collaborative proposal</h2>
+  <label class="grey-text-form">collaboration name</label>
+  <div class="input-md position-realtive">
+    <input readonly="true" type="text" name="pName" [value]="prObjApply.name" class="form-control-project">
+    <i class="fa fa-check"></i>
+  </div>
+  <label class="grey-text-form">project objectives</label>
+  <div class="position-realtive">
+    <div class="object-project" [innerHtml]="prObjApply.collabData.objectif">
+    </div>
+  </div>
+  <form [formGroup]="applyToForm" (ngSubmit)="sendApplicationOnProject()">
+    <label class="grey-text-form mt-3">Application name</label>
+    <div class="input-md position-realtive">
+      <input  type="text" formControlName="applicationName" class="form-control-project">
+      <!-- <i class="fa fa-check"></i> -->
+    </div>
+    <h3>activity and skills</h3>
+    <div class="row pt-2">
+      <div class="col-12 pl-0">
+        <div class="mb-20 pr-i">
+          <label class="grey-text-form">Main area of activity :</label>
+          <ckeditor height="100px" rows="40" cols="40" placeholder="Main area of activity ..." formControlName="main_activity_domain"
+            [config]="g.getConfig('conf0_editor')" [readonly]="false" (change)="onChange($event)" (editorChange)="onEditorChange($event)"
+            (ready)="onReady($event)" (focus)="onChange($event)" (blur)="onChange($event)" debounce="500">
+          </ckeditor>
+        </div>
+      </div>
+    </div>
+    <div class="row pt-4">
+      <div class="col-12 pl-0">
+        <div class="mb-20 pr-i">
+          <label class="grey-text-form">Related activity :</label>
+          <ckeditor height="100px" rows="40" cols="40" placeholder="Related activity ..." formControlName="secondary_activity_domain"
+            [config]="g.getConfig('conf0_editor')" [readonly]="false" (change)="onChange($event)" (editorChange)="onEditorChange($event)"
+            (ready)="onReady($event)" (focus)="onChange($event)" (blur)="onChange($event)" debounce="500">
+          </ckeditor>
+        </div>
+      </div>
+      <div class="col-12 pl-0">
+        <div class="mb-20">
+          <label class="grey-text-form mt-3">Skills and specificities :</label>
+          <ckeditor height="100px" rows="40" cols="40" placeholder="skills, Specificities ..." formControlName="skill_specificities"
+            [config]="g.getConfig('conf0_editor')" [readonly]="false" (change)="onChange($event)" (editorChange)="onEditorChange($event)"
+            (ready)="onReady($event)" (focus)="onChange($event)" (blur)="onChange($event)" debounce="500">
+          </ckeditor>
+        </div>
+      </div>
+    </div>
+    <h2>the collaboration proposal</h2>
+    <label class="grey-text-form  grey-text-form-proposal">can you specify in few lines your proposal, and make sure to explain the link with your activities, projects and skills,
+      to strengthen the credibility of your proposal</label>
+    <div class="row pb-4">
+      <div class="col-12 p-0">
+        <div class="mb-20">
+          <ckeditor height="100px" rows="40" cols="40" placeholder="Proposition of collaboration ..." formControlName="collab_proposal_describ"
+            [config]="g.getConfig('conf0_editor')" [readonly]="false" (change)="onChange($event)" (editorChange)="onEditorChange($event)"
+            (ready)="onReady($event)" (focus)="onChange($event)" (blur)="onChange($event)" debounce="500">
+          </ckeditor>
+        </div>
+      </div>
+    </div>
+    <div class="text-right">
+      <button [ngClass]="{disabled: !applyToForm.valid }" class="mb-4 btn-col btn">
+        <i class="fa fa-send pr-2"></i>send</button>
+    </div>
+  </form>
+</div>

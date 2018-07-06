@@ -1,0 +1,27 @@
+<div class="col-container">
+  <h3 class="m-yq">
+    Your deal spaces list
+  </h3>
+  <div class="list-deal-div">
+    <table class="table appli-table table-striped">
+      <thead class="head-color">
+        <tr class="text-bl">
+          <th>Deal name</th>
+          <th>Collaboration type</th>
+          <th>Author</th>
+          <th>Applications</th>
+          <th>Numbers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let deal of listDeal">
+          <td><a [routerLink]="['/administration-in','collaborations','deal-space','deal',  deal._id]">{{deal.collabData.name}}</a></td>
+          <td>{{g.getCollabtypetext(deal.collabData.typeCollab)}}</td>
+          <td>{{deal.byUser.lastname}}</td>
+          <td>{{deal.dealNumber.applicationNum}}</td>
+          <td>{{deal.dealNumber.files + deal.dealNumber.questions_response}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

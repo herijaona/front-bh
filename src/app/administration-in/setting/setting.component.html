@@ -1,0 +1,19 @@
+<navbar-admin></navbar-admin>
+<nav class="navbar navbar-expand-sm nav-tel">
+    <ul class="navbar-nav ns">
+        <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','setting','config']">Features</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/administration-in','setting','subscription']">Subscription</a>
+        </li>
+    </ul>
+    <div class="icon-plus">
+        <i class="tp fa fa-plus"></i>
+    </div>
+</nav>
+<main class="collaboration-container">
+    <div class="ml-16">
+        <router-outlet></router-outlet>
+    </div>
+</main>

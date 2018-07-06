@@ -1,0 +1,58 @@
+<div class="deal-file-container">
+  <table class="deal-table-list">
+    <tr class="head-list">
+      <th class="name-file">NAME</th>
+      <th class="last-u">LAST UPDATE</th>
+      <th class="size">SIZE</th>
+      <th class="author">AUTHOR</th>
+      <th class="size" (click)="insertObservation()">
+        <input type="button" class="bt-insert" value="Insert">
+      </th>
+    </tr>
+    <tr *ngFor="let itr of data_" class="deal-file-row">
+      <td>{{itr.name}}</td>
+      <td>{{getDateString(itr.creationDate)}}</td>
+      <td>{{itr.size}} Octets</td>
+      <td>{{itr.userADD.lastname+' '+ itr.userADD.firstname}}</td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+
+<div style="overflow: auto;" mdbModal #modalHist="mdb-modal" class="modal fade" id="modalZoneForm" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true" [config]="{backdrop: false, ignoreBackdropClick: true}">
+  <div class="modal-dialog" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header md-new">
+        <h2>
+          Add file
+        </h2>
+      </div>
+      <!--Body-->
+      <div class="modal-body mb-0">
+        <div class="modal-body mb-0">
+          <div class="file-field">
+            <input multiple (change)="changeFilesList($event,'_filev')" id="_filev" name="_filev" type="file" class="inputfile" mdbActive>
+            <label for="logoFile" class="label-file">
+              <strong>Browse file</strong>
+            </label>
+          </div>
+          <div *ngFor="let iter of filesSelected" class="file-set">
+            <hr>
+            <span class="mr-3">{{iter.name}}</span>
+            <span class="mr-3">{{iter.size}}</span>
+            <span class="mr-3">{{iter.type}}</span>
+            <span><i class="fa fa-remove"></i></span>
+          </div>
+        </div>
+        <div class="flex fx">
+          <a class="nav-link select-col fca" (click)="hideModal()">Cancel</a>
+          <a [ngClass]="{ disabled: !butt_up }" (click)="uploadImageInBiblio($event, '_filev' )" type="submit" class="nav-link select-col fc">Insert</a>
+        </div>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>

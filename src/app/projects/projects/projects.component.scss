@@ -1,0 +1,134 @@
+.bg-mind{
+    background-image:url(/assets/img/london.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 355px;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 0px;
+}
+.nr-brand{
+    visibility: hidden;
+}
+.nav-two{
+    background-color: transparent !important;
+    height: 75px;
+    top: 261px;
+    h1{
+        color: white;
+        font-family: "SourceSansPro-bold";
+    }
+    ul li ul li a{
+        color: white;
+        font-family: "SourceSansPro-Lighter";
+        font-style: italic;
+    }
+}
+
+.grid{
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: none;
+}
+.nav-col{
+    margin-top: -37px;
+}
+.nav-one{
+    margin-bottom: 45px;
+    max-height: 51px;
+    box-shadow: 0px 1px 2px 0px grey;
+    padding-bottom: 0;
+    .nav-link{
+        background: transparent !important;
+        color: rgba(0, 0, 0, 0.5) !important;
+    }
+    ul li a{
+        font-family: "SourceSansPro-bold";
+    }
+    .active .nav-link{
+        border-bottom: 3px solid #e84d3f;
+        color: rgba(0, 0, 0, 0.9) !important;
+    }
+}
+.img-logo{
+    margin-top: -45px;
+}
+.row-bottom{
+    margin-bottom: 15px;
+    table{
+        td{
+            font-family: "SourceSansPro-Semibold";
+            text-transform: uppercase;
+        }
+        td a{
+            font-size: 14px;
+        }
+        td span{
+            color: #e84d3f;
+        }
+    }
+    .table-bord{
+        box-shadow: 0px 0px 4px 0px #b1b0b0;
+    }
+}
+.presentation{
+    text-align: justify;
+    h2{
+        border-bottom: 1px solid #b9b7b7;
+        font-size: 19px;
+        padding-bottom: 17px;
+        font-family: SourceSansPro-bold;
+    }
+    p{
+        color: gray;
+        font-size: 15px;
+        font-family: SourceSansPro-Regular;
+    }
+}
+.btn-wnt{
+    background: transparent !important;
+    border: 1px solid gray;
+    color: gray !important;
+    font-size: 16px;
+    border-radius: 0px;
+    text-transform: initial;
+    box-shadow: none;
+}
+.btn-crt{
+    background: #e83936;
+    border: 1px solid #e83936;
+    border-radius: 0;
+    font-size: 16px;
+    margin-left: -11px;
+    box-shadow: none;
+    text-transform: initial;
+}
+.lead{
+    a svg{
+        color: black;
+    }
+}
+.hr{
+    margin-bottom: 20px;
+}
+.grid-top{
+    margin-bottom: 20px;
+}
+.projects-list{
+    line-height: 65px;
+    box-shadow: 0px 0px 3px 1px #b9b9b9;
+    padding: 42px 42px 5px 42px;
+}
+.create-new{
+    position:relative;
+    width: 198px;
+}
+.ed-2{
+    box-shadow: 0.2px 0px 0.1px 1px #e84d3f;
+}
+.btn-unique-edit{
+    background: linear-gradient(-90deg, #e83936, #f94d37);
+    font-family: SourceSansPro-Bold;
+    margin-bottom: 15px;
+    margin-top: 27px;
+}
